@@ -155,10 +155,11 @@ export default function TeamPage() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             {/* SCO Product */}
             <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg overflow-hidden">
-              <img src="/sco.jpg" alt="SCO - SnapCaptions.co" className="block w-full aspect-square object-cover" />
+            <img src="/sco.jpg" alt="SCO - SnapCaptions.co" className="block w-full h-64 object-contain" />
+
               <div className="p-4 text-center">
                 <a
                   href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTUwNjU5ODk2NzkwOTA2?story_media_id=3559516281487564491_71575404020&igsh=ZHo0NndkdmtuaWs3"
@@ -173,7 +174,8 @@ export default function TeamPage() {
 
             {/* LUMIAI Product */}
             <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg overflow-hidden">
-              <img src="/lumiai.jpg" alt="LUMIAI" className="block w-full aspect-square object-cover" />
+            <img src="/lumiai.jpg" alt="LUMIAI" className="block w-full h-64 object-contain" />
+
               <div className="p-4 text-center">
                 <a
                   href="https://www.instagram.com/lumi.ai_/"
