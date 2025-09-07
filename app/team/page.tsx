@@ -54,11 +54,11 @@ export default function TeamPage() {
 
             <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6 text-center">
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-black">
-                <img src="/vikas-chary-headshot.png" alt="Bommakanti Maneesh" className="w-full h-full object-cover" />
+                <img src="/Maneesh.jpg" alt="Bommakanti Maneesh" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-bold text-lg mb-1">BOMMAKANTI MANEESH</h3>
               <p className="text-blue-600 font-semibold mb-2">Applied AI Expert</p>
-              <p className="text-sm text-gray-600 mb-4">No-code/Low-code Developer, R&D AI Specialist, and AI Superstack Mentor.</p>
+              <p className="text-sm text-gray-600 mb-4">AI Creator,No-code/Low-code Developer, R&D AI Specialist, and AI Superstack Mentor.</p>
               <div className="flex justify-center gap-2">
                 <a
                   href="https://www.linkedin.com/in/bommakanti-maneesh-0494972b3"
