@@ -126,13 +126,15 @@ export default function AIEngineerPage() {
                 <div>
                   <h3 className="text-xl font-black text-black">AI Engineering Bootcamp</h3>
                   <p className="text-black font-bold">Complete 45-day program with live mentorship</p>
+                  <p className="text-green-600 font-bold text-sm mt-2">
+                    Use code: <span className="bg-yellow-200 px-2 py-1 rounded border border-black font-black">VYBE</span> to get ₹2,601 off
+                  </p>
                 </div>
                 <div className="text-right">
-  <div className="text-2xl font-black text-gray-500 line-through">₹12,000</div>
-  <div className="text-3xl font-black text-black">₹9,399</div>
-  <div className="text-sm font-bold text-gray-600">One-time payment</div>
-</div>
-
+                  <div className="text-2xl font-black text-gray-500 line-through">₹12,000</div>
+                  <div className="text-3xl font-black text-black">₹9,399</div>
+                  <div className="text-sm font-bold text-gray-600">One-time payment</div>
+                </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="p-4 border-2 border-black bg-white rounded-lg text-center">

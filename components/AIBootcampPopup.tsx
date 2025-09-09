@@ -134,12 +134,18 @@ export default function AIBootcampPopup() {
 
           {/* Pricing section */}
           <div className="bg-blue-100 border-2 border-black rounded-lg p-4 mb-6">
-            <p className="text-black font-black text-center text-lg">
-              Course Price: ₹12,000
-            </p>
-            <p className="text-black font-bold text-center text-sm">
-              (One-time, 45 days, Live Mentorship, 4+ Projects)
-            </p>
+            <div className="text-center">
+              <p className="text-black font-black text-lg mb-2">
+                <span className="text-2xl text-gray-500 line-through">₹12,000</span>
+                <span className="text-2xl text-black ml-2">₹9,399</span>
+              </p>
+              <p className="text-green-600 font-bold text-sm mb-2">
+                Use code: <span className="bg-yellow-200 px-2 py-1 rounded border border-black font-black">VYBE</span> to get ₹2,601 off
+              </p>
+              <p className="text-black font-bold text-sm">
+                (One-time, 45 days, Live Mentorship, 4+ Projects)
+              </p>
+            </div>
           </div>
 
           {/* Highlight box with 5 bullet points */}
