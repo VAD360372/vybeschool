@@ -128,9 +128,11 @@ export default function AIEngineerPage() {
                   <p className="text-black font-bold">Complete 45-day program with live mentorship</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-black text-black">₹12,000</div>
-                  <div className="text-sm font-bold text-gray-600">One-time payment</div>
-                </div>
+  <div className="text-2xl font-black text-gray-500 line-through">₹12,000</div>
+  <div className="text-3xl font-black text-black">₹9,399</div>
+  <div className="text-sm font-bold text-gray-600">One-time payment</div>
+</div>
+
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="p-4 border-2 border-black bg-white rounded-lg text-center">
