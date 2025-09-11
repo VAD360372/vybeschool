@@ -48,7 +48,6 @@ export default function AIEngineerPage() {
             <video
               className="w-full h-full object-cover"
               controls
-              poster="/aiengineer.jpeg"
               preload="metadata"
             >
               <source src="/Bootcamp Video.mp4" type="video/mp4" />

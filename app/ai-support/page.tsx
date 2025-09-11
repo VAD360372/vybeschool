@@ -56,7 +56,6 @@ export default function AISupport() {
                 <video
                   className="w-full aspect-video object-cover"
                   controls
-                  poster="/ai-support-hero.png"
                   preload="metadata"
                 >
                   <source src="/what is AI-Support.mp4" type="video/mp4" />

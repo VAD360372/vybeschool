@@ -68,10 +68,10 @@ export default function Page() {
   ]
 
   const discoverVideos = [
-    { duration: "3:45", title: "WHAT IS VYBESCHOOL", video: "/WHAT IS VYBESCHOOL VIDEO.mp4", poster: "/tech-workers.png" },
-    { duration: "5:12", title: "WHY WE STARTED VYBE SCHOOL", video: "/WHY WE STARTED VYBE SCHOOL.mp4", poster: "/ai-education-meeting.png" },
-    { duration: "4:28", title: "WHY JOIN VYBESCHOOL", video: "/WHY JOIN VYBESCHOOL.mp4", poster: "/diverse-students-learning.png" },
-    { duration: "7:33", title: "WHAT IS AI-SUPPORT", video: "/what is AI-Support.mp4", poster: "/futuristic-ai-blue-patterns.png" },
+    { duration: "3:45", title: "WHAT IS VYBESCHOOL", video: "/WHAT IS VYBESCHOOL VIDEO.mp4" },
+    { duration: "5:12", title: "WHY WE STARTED VYBE SCHOOL", video: "/WHY WE STARTED VYBE SCHOOL.mp4" },
+    { duration: "4:28", title: "WHY JOIN VYBESCHOOL", video: "/WHY JOIN VYBESCHOOL.mp4" },
+    { duration: "7:33", title: "WHAT IS AI-SUPPORT", video: "/what is AI-Support.mp4" },
   ]
 
   const curriculumSections = [
@@ -422,7 +422,6 @@ export default function Page() {
                   <video
                     className="w-full h-full object-cover rounded-lg"
                     controls
-                    poster="/ai-education-meeting.png"
                   >
                     <source src="/Bootcamp Video.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -502,7 +501,6 @@ export default function Page() {
                   <video
                     className="w-full h-full object-cover rounded-lg"
                     controls
-                    poster="/ai-education-meeting.png"
                   >
                     <source src="/Bootcamp Video.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -604,7 +602,6 @@ export default function Page() {
                   <video
                     className="w-full aspect-video object-cover"
                     controls
-                    poster={video.poster}
                     preload="metadata"
                   >
                     <source src={video.video} type="video/mp4" />
