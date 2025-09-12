@@ -1149,9 +1149,6 @@ export default function Page() {
         {/* Mobile Navigation */}
         <div className="hidden md:hidden fixed bottom-0 left-0 right-0 p-4" style={{ backgroundColor: "#FFD700" }}>
           <div className="flex justify-center gap-2 text-sm font-bold">
-            <a href="/blog" className="px-3 py-2 border-2 border-black bg-white rounded-lg">
-              BLOG
-            </a>
             <a href="/team" className="px-3 py-2 border-2 border-black bg-white rounded-lg">
               TEAM
             </a>

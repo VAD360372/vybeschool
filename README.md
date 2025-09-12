@@ -29,9 +29,6 @@ Vybeschool-MAIN-SITE/
     - ai-tools/page.tsx — Applied AI tools overview
     - course/[courseId]/page.tsx — Dynamic course details
     - page.tsx — Applied AI main page
-  - blog/
-    - page.tsx — Blog list
-    - [slug]/page.tsx — Blog detail
   - live-classes/page.tsx — Live classes
   - support/page.tsx — Support page
   - team/page.tsx — Our Team (gallery, members, products tiles)
@@ -73,8 +70,6 @@ Lint:
 - /applied-ai  app/applied-ai/page.tsx
   - /applied-ai/ai-tools  app/applied-ai/ai-tools/page.tsx
   - /applied-ai/course/[courseId]  app/applied-ai/course/[courseId]/page.tsx
-- /blog  app/blog/page.tsx
-  - /blog/[slug]  app/blog/[slug]/page.tsx
 - /live-classes  app/live-classes/page.tsx
 - /support  app/support/page.tsx
 - /team  app/team/page.tsx

@@ -29,9 +29,6 @@ export default function GlobalNavigation() {
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-6 text-lg text-black font-black">
-            <Link href="/blog" className="hover:underline cursor-pointer">
-              BLOG/PROJECTS
-            </Link>
             <Link href="/team" className="hover:underline cursor-pointer">
               OUR TEAM
             </Link>
@@ -81,13 +78,6 @@ export default function GlobalNavigation() {
 
           {/* Centered menu content */}
           <div className="flex flex-col items-center justify-center h-full space-y-8">
-            <Link
-              href="/blog"
-              className="text-2xl font-black text-black hover:underline py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              BLOG/PROJECTS
-            </Link>
             <Link
               href="/team"
               className="text-2xl font-black text-black hover:underline py-2"
