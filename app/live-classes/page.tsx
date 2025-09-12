@@ -24,7 +24,7 @@ export default function LiveClassesPage() {
             <h2 className="text-2xl md:text-3xl font-black text-black mb-2">AI Engineering</h2>
             <div className="space-y-2 text-black font-bold mb-4">
               <p>Duration: 40 days</p>
-              <p>Price: ₹9,399</p>
+              <p>Price: ₹5,000</p>
               <p>Timeline: Batch starts in 14 days</p>
             </div>
             

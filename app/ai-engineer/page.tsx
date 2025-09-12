@@ -126,14 +126,21 @@ export default function AIEngineerPage() {
                   <h3 className="text-xl font-black text-black">AI Engineering Bootcamp</h3>
                   <p className="text-black font-bold">Complete 45-day program with live mentorship</p>
                   <p className="text-green-600 font-bold text-sm mt-2">
-                    Use code: <span className="bg-yellow-200 px-2 py-1 rounded border border-black font-black">VYBE</span> to get ₹2,601 off
+                    Use code: <span className="bg-yellow-200 px-2 py-1 rounded border border-black font-black">VYBE</span> to get ₹7,000 off
                   </p>
                 </div>
                 <div className="text-right">
                   <div className="text-2xl font-black text-gray-500 line-through">₹12,000</div>
-                  <div className="text-3xl font-black text-black">₹9,399</div>
+                  <div className="text-3xl font-black text-black">₹5,000</div>
                   <div className="text-sm font-bold text-gray-600">One-time payment</div>
                 </div>
+              </div>
+              {/* Internships Partnership */}
+              <div className="flex items-center gap-4 p-4 border-2 border-black bg-white rounded-lg">
+                <img src="/iq.png" alt="Instruc IQ" className="w-16 h-16 object-contain border-2 border-black rounded-lg bg-white" />
+                <p className="text-black font-bold">
+                  We have partnered with <span className="font-black">Instruc IQ</span> to provide internships for everyone who joins the VybeSchool AI Engineering Bootcamp.
+                </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="p-4 border-2 border-black bg-white rounded-lg text-center">

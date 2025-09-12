@@ -137,10 +137,10 @@ export default function AIBootcampPopup() {
             <div className="text-center">
               <p className="text-black font-black text-lg mb-2">
                 <span className="text-2xl text-gray-500 line-through">₹12,000</span>
-                <span className="text-2xl text-black ml-2">₹9,399</span>
+                <span className="text-2xl text-black ml-2">₹5,000</span>
               </p>
               <p className="text-green-600 font-bold text-sm mb-2">
-                Use code: <span className="bg-yellow-200 px-2 py-1 rounded border border-black font-black">VYBE</span> to get ₹2,601 off
+                Use code: <span className="bg-yellow-200 px-2 py-1 rounded border border-black font-black">VYBE</span> to get ₹7,000 off
               </p>
               <p className="text-black font-bold text-sm">
                 (One-time, 45 days, Live Mentorship, 4+ Projects)
