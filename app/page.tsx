@@ -22,8 +22,11 @@ export default function Page() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null)
   const [showEmail, setShowEmail] = useState(false)
+  const [currentGalleryItem, setCurrentGalleryItem] = useState(0)
+  const [isGalleryScrolled, setIsGalleryScrolled] = useState(false)
 
   const heroRef = useRef<HTMLDivElement>(null)
+  const galleryRef = useRef<HTMLDivElement>(null)
   const discoverRef = useRef<HTMLDivElement>(null)
   const curriculumRef = useRef<HTMLDivElement>(null)
   const projectsRef = useRef<HTMLDivElement>(null)
@@ -51,7 +54,7 @@ export default function Page() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions)
 
-    const sections = [heroRef, discoverRef, curriculumRef, projectsRef, testimonialsRef, faqRef, footerRef]
+    const sections = [galleryRef, heroRef, discoverRef, curriculumRef, projectsRef, testimonialsRef, faqRef, footerRef]
     sections.forEach((ref) => {
       if (ref.current) {
         observer.observe(ref.current)
@@ -61,10 +64,49 @@ export default function Page() {
     return () => observer.disconnect()
   }, [])
 
+  // Gallery scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (galleryRef.current) {
+        const rect = galleryRef.current.getBoundingClientRect()
+        const isInView = rect.top <= 100 && rect.bottom >= 100
+        setIsGalleryScrolled(isInView)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const languages = [
     { code: "english", name: "ENGLISH", color: "#4285F4" },
     { code: "telugu", name: "TELUGU", color: "#34C759" },
     { code: "hindi", name: "HINDI", color: "#FF9500" },
+  ]
+
+  const galleryItems = [
+    {
+      type: "youtube",
+      title: "Large Language Models & Transformers Explained in Telugu!",
+      embed: "https://www.youtube.com/embed/g1sQyrFW24A",
+      id: "g1sQyrFW24A"
+    },
+    {
+      type: "youtube", 
+      title: "Transformers Explained in Telugu",
+      embed: "https://www.youtube.com/embed/3KGoJFrdiAI",
+      id: "3KGoJFrdiAI"
+    },
+    {
+      type: "image",
+      title: "2x National Level Hackathon Winners",
+      src: "/hackathon1.jpg"
+    },
+    {
+      type: "image",
+      title: "2x National Level Hackathon Winners", 
+      src: "/hackathon3.jpg"
+    }
   ]
 
   const discoverVideos = [
@@ -375,6 +417,14 @@ export default function Page() {
     setActiveFAQ(activeFAQ === index ? null : index)
   }
 
+  const nextGalleryItem = () => {
+    setCurrentGalleryItem((prev) => (prev + 1) % galleryItems.length)
+  }
+
+  const prevGalleryItem = () => {
+    setCurrentGalleryItem((prev) => (prev - 1 + galleryItems.length) % galleryItems.length)
+  }
+
   return (
     <>
       <style jsx global>{`
@@ -408,6 +458,127 @@ export default function Page() {
       `}</style>
 
       <main className="min-h-screen" style={{ backgroundColor: "#FFD700" }}>
+        {/* Video Gallery Section */}
+        <section
+          ref={galleryRef}
+          className="scroll-section px-4 md:px-6 py-12 md:py-16"
+          style={{ backgroundColor: "#FFD700" }}
+        >
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <h2
+                className="text-2xl md:text-5xl font-black px-4 md:px-6 py-3 border-4 border-black shadow-[6px_6px_0_0_#000] inline-block mb-6"
+                style={{ backgroundColor: "#4285F4", color: "white" }}
+              >
+                <span className="md:hidden">AI CONCEPTS IN TELUGU</span>
+                <span className="hidden md:inline">LEARN AI CONCEPTS IN TELUGU</span>
+              </h2>
+              <p className="text-lg md:text-2xl font-black text-black">
+                <span className="md:hidden">EDUCATIONAL VIDEOS & 2X NATIONAL HACKATHON WINNERS</span>
+                <span className="hidden md:inline">WATCH OUR EDUCATIONAL VIDEOS & 2X NATIONAL LEVEL HACKATHON WINNERS</span>
+              </p>
+            </div>
+
+            {/* Gallery Container */}
+            <div className="relative">
+              {/* Main Gallery Item with Side Navigation */}
+              <div className="flex items-center justify-center gap-4 md:gap-8 mb-8">
+                {/* Left Arrow - Hidden on mobile */}
+                <button
+                  onClick={prevGalleryItem}
+                  className="hidden md:flex w-12 h-12 border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: "#000" }}
+                >
+                  <ChevronLeft className="w-6 h-6 text-white" />
+                </button>
+
+                {/* Video Container */}
+                <div className="flex-1 max-w-full md:max-w-2xl">
+                  <div
+                    className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden rounded-lg mx-auto"
+                    style={{ 
+                      backgroundColor: "#2C3E50",
+                      transform: `scale(${isGalleryScrolled ? 1.05 : 1})`,
+                      transition: "transform 0.3s ease-in-out"
+                    }}
+                  >
+                    {galleryItems[currentGalleryItem].type === "youtube" ? (
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={galleryItems[currentGalleryItem].embed}
+                        title={galleryItems[currentGalleryItem].title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                        className="rounded-lg"
+                      />
+                    ) : (
+                      <img
+                        src={galleryItems[currentGalleryItem].src}
+                        alt={galleryItems[currentGalleryItem].title}
+                        className="w-full h-full object-cover rounded-lg"
+                      />
+                    )}
+                  </div>
+                  <h3 className="mt-4 md:mt-6 text-sm md:text-xl font-black text-center text-black px-2">
+                    <span className="md:hidden">
+                      {galleryItems[currentGalleryItem].title.length > 40 
+                        ? galleryItems[currentGalleryItem].title.substring(0, 40) + "..." 
+                        : galleryItems[currentGalleryItem].title}
+                    </span>
+                    <span className="hidden md:inline">
+                      {galleryItems[currentGalleryItem].title}
+                    </span>
+                  </h3>
+                </div>
+
+                {/* Right Arrow - Hidden on mobile */}
+                <button
+                  onClick={nextGalleryItem}
+                  className="hidden md:flex w-12 h-12 border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: "#000" }}
+                >
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </button>
+              </div>
+
+              {/* Mobile Navigation - Below video */}
+              <div className="flex md:hidden justify-center gap-4 mb-6">
+                <button
+                  onClick={prevGalleryItem}
+                  className="w-12 h-12 border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all flex items-center justify-center"
+                  style={{ backgroundColor: "#000" }}
+                >
+                  <ChevronLeft className="w-6 h-6 text-white" />
+                </button>
+                <button
+                  onClick={nextGalleryItem}
+                  className="w-12 h-12 border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all flex items-center justify-center"
+                  style={{ backgroundColor: "#000" }}
+                >
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </button>
+              </div>
+
+              {/* Join Now Button */}
+              <div className="text-center">
+                <a
+                  href="https://nexify.club/dp/68c020ea3ea1a10319f61326"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all cursor-pointer"
+                  style={{ backgroundColor: "#25D366", color: "white" }}
+                >
+                  JOIN NOW →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Hero Section */}
         <div ref={heroRef} className="scroll-section px-4 md:px-6 py-8 md:py-12">
           <div className="max-w-7xl mx-auto">

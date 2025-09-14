@@ -380,7 +380,7 @@ export default function AIEngineerPage() {
                   JOIN NOW →
                 </button>
               </a>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLScDsiYKC22ekSQL-FmsGZV1-EK3Kc7ApcTgiJSzFaM_jjk8gQ/viewform" target="_blank" rel="noopener noreferrer">
+              <a href="https://nexify.club/dp/68c020ea3ea1a10319f61326" target="_blank" rel="noopener noreferrer">
                 <button
                   className="px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all cursor-pointer rounded-lg"
                   style={{ backgroundColor: "#FF6B35", color: "white" }}
