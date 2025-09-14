@@ -168,7 +168,7 @@ export default function AIBootcampPopup() {
 
           {/* Register Now Button */}
           <Link
-            href="https://docs.google.com/forms/d/e/1FAIpQLScDsiYKC22ekSQL-FmsGZV1-EK3Kc7ApcTgiJSzFaM_jjk8gQ/viewform?usp=preview"
+            href="https://nexify.club/dp/68c020ea3ea1a10319f61326"
             target="_blank"
             rel="noopener noreferrer"
           >
