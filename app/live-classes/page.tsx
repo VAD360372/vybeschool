@@ -25,7 +25,7 @@ export default function LiveClassesPage() {
             <div className="space-y-2 text-black font-bold mb-4">
               <p>Duration: 40 days</p>
               <p>Price: ₹5,000</p>
-              <p>Timeline: Batch starts in 14 days</p>
+              <p>Timeline: Batch starts in 6 days</p>
             </div>
             
             {/* What is AI Engineer Button */}
