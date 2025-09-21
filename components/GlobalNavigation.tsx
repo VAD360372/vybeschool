@@ -36,7 +36,7 @@ export default function GlobalNavigation() {
               AI SUPPORT
             </Link>
             <Link href="/live-classes" className="hover:underline cursor-pointer">
-              LIVE CLASSES
+              AI WEBINARS
             </Link>
             <Link href="/ai-engineer" className="hover:underline cursor-pointer">
               AI ENGINEER
@@ -97,7 +97,7 @@ export default function GlobalNavigation() {
               className="text-2xl font-black text-black hover:underline py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              LIVE CLASSES
+              AI WEBINARS
             </Link>
             <Link
               href="/applied-ai"

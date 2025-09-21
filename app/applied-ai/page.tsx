@@ -36,17 +36,6 @@ export default function AppliedAIPage() {
       moreHref: "/ai-engineer",
       startHref: "https://chat.whatsapp.com/GW50XlYydFGDleL2dxcNSQ?mode=ems_copy_t",
     },
-    {
-      id: 4,
-      title: "Course Recordings : n8n Mastery",
-      subtitle: "7-Day Live Hands-On Program",
-      description:
-        "Note : N8N recordings - Master workflow automation with n8n through comprehensive hands-on training sessions.",
-      image: "/n8n.jpg",
-      color: "from-green-500 to-teal-500",
-      startHref: "https://vybeschool.akamai.net.in/new-courses/4-n8n-mastery-7-day-live-hands-on-program",
-      onlyStartButton: true,
-    },
   ]
 
   const dynamites = [
@@ -224,13 +213,11 @@ export default function AppliedAIPage() {
                     >
                       START LEARNING
                     </button>
-                    {!(course as any).onlyStartButton && (
-                      <Link href={(course as any).moreHref ? (course as any).moreHref : `/applied-ai/course/${course.id}`}>
-                        <button className="bg-green-500 text-white px-4 py-2 font-bold text-sm border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg hover:bg-green-600 transition-colors w-full">
-                          VIEW MORE
-                        </button>
-                      </Link>
-                    )}
+                    <Link href={(course as any).moreHref ? (course as any).moreHref : `/applied-ai/course/${course.id}`}>
+                      <button className="bg-green-500 text-white px-4 py-2 font-bold text-sm border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg hover:bg-green-600 transition-colors w-full">
+                        VIEW MORE
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
