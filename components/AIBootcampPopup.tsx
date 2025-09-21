@@ -24,8 +24,8 @@ export default function AIBootcampPopup() {
   // Countdown timer logic
   useEffect(() => {
     const calculateTimeLeft = () => {
-      // Set target date to September 21, 2025 at 00:00:00
-      const targetDate = new Date("2025-09-21T00:00:00").getTime()
+      // Set target date to September 28, 2025 at 00:00:00
+      const targetDate = new Date("2025-09-28T00:00:00").getTime()
       const now = new Date().getTime()
       const difference = targetDate - now
 
@@ -73,7 +73,7 @@ export default function AIBootcampPopup() {
           {/* Headline with Countdown */}
           <div className="text-center mb-6">
             <h2 className="text-xl md:text-2xl font-black text-black mb-4">
-              AI Engineering Bootcamp starts on September 21
+              AI Engineering Bootcamp starts on September 28
             </h2>
             <div className={`border-2 border-black rounded-lg p-4 mb-4 ${
               timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 

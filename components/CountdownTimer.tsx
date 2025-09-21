@@ -13,8 +13,8 @@ export default function CountdownTimer() {
   // Countdown timer logic
   useEffect(() => {
     const calculateTimeLeft = () => {
-      // Set target date to September 21, 2025 at 00:00:00
-      const targetDate = new Date("2025-09-21T00:00:00").getTime()
+      // Set target date to September 28, 2025 at 00:00:00
+      const targetDate = new Date("2025-09-28T00:00:00").getTime()
       const now = new Date().getTime()
       const difference = targetDate - now
 
@@ -44,7 +44,7 @@ export default function CountdownTimer() {
   return (
     <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg bg-white">
       <h2 className="text-2xl md:text-3xl font-black text-black mb-4 text-center">
-        AI Engineering Bootcamp starts on September 21
+        AI Engineering Bootcamp starts on September 28
       </h2>
       
       <div className={`border-2 border-black rounded-lg p-4 mb-4 ${
