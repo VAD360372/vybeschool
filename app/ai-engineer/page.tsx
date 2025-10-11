@@ -137,10 +137,27 @@ export default function AIEngineerPage() {
               </div>
               {/* Internships Partnership */}
               <div className="flex items-center gap-4 p-4 border-2 border-black bg-white rounded-lg">
-                <img src="/iq.png" alt="Instruc IQ" className="w-16 h-16 object-contain border-2 border-black rounded-lg bg-white" />
-                <p className="text-black font-bold">
-                  We have partnered with <span className="font-black">Instruc IQ</span> to provide internships for everyone who joins the VybeSchool AI Engineering Bootcamp.
-                </p>
+                <a 
+                  href="https://www.instructiq.tech/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  <img src="/iq.png" alt="InstructIQ" className="w-16 h-16 object-contain border-2 border-black rounded-lg bg-white" />
+                </a>
+                <div className="flex-1">
+                  <p className="text-black font-bold mb-3">
+                    We have partnered with <span className="font-black"><span style={{color:"#007BFF"}}>Instruct</span><span style={{color:"#FF6B00"}}>IQ</span></span> to provide internships for everyone who joins the VybeSchool AI Engineering Bootcamp.
+                  </p>
+                  <a 
+                    href="https://www.instructiq.tech/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 text-sm font-black text-orange-600 border-2 border-orange-600 rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-200"
+                  >
+                    Know More About <span style={{color:"#007BFF"}}>Instruct</span><span style={{color:"#FF6B00"}}>IQ</span>
+                  </a>
+                </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="p-4 border-2 border-black bg-white rounded-lg text-center">
@@ -394,6 +411,30 @@ export default function AIEngineerPage() {
           </div>
         </div>
       </section>
+      {/* Partner Section */}
+      <section className="px-4 md:px-6 py-8" style={{ backgroundColor: "#F8F9FA" }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="p-6 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-lg bg-white">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <a 
+                href="https://www.instructiq.tech/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity flex-shrink-0"
+              >
+                <img src="/iq.png" alt="InstructIQ" className="w-20 h-20 object-contain border-2 border-black rounded-lg bg-white" />
+              </a>
+              <div className="text-center md:text-left">
+                <h3 className="text-xl md:text-2xl font-black text-black mb-2">Partnered with <span style={{color:"#007BFF"}}>Instruct</span><span style={{color:"#FF6B00"}}>IQ</span></h3>
+                <p className="text-black font-bold leading-relaxed">
+                  Where IQ Meets IT — Empowering aspiring professionals with real-world training, mentorship, and internships to bridge the gap between education and industry.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Back to top button */}
       <button
         onClick={() => {
