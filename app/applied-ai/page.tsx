@@ -33,7 +33,6 @@ export default function AppliedAIPage() {
         "Become job‑ready in Python, NLP, LLMs, vector databases, and app development. Master OpenAI, LangChain, Pinecone, Streamlit, and build a standout portfolio.",
       image: "/aiengineer.jpeg",
       color: "from-blue-600 to-indigo-600",
-      moreHref: "/ai-engineer",
       startHref: "https://chat.whatsapp.com/GW50XlYydFGDleL2dxcNSQ?mode=ems_copy_t",
     },
   ]

@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import GlobalNavigation from "@/components/GlobalNavigation"
-import AIBootcampPopup from "@/components/AIBootcampPopup"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,7 +32,6 @@ export default function RootLayout({
       <body className="font-sans">
         <GlobalNavigation />
         {children}
-        <AIBootcampPopup />
       </body>
     </html>
   )

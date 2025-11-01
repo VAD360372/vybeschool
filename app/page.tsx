@@ -973,25 +973,14 @@ export default function Page() {
                 })()}
 
             <div className="text-center">
-              {activeProgram === "superstack" ? (
-                <Link href="/applied-ai">
-                  <button
-                    className="px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 mx-auto"
-                    style={{ backgroundColor: "#9B59B6", color: "white" }}
-                  >
-                    VIEW MORE COURSES →
-                  </button>
-                </Link>
-              ) : (
-                <Link href="/ai-engineer">
-                  <button
-                    className="px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 mx-auto"
-                    style={{ backgroundColor: "#25D366", color: "white" }}
-                  >
-                    JOIN NOW →
-                  </button>
-                </Link>
-              )}
+              <Link href="/applied-ai">
+                <button
+                  className="px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 mx-auto"
+                  style={{ backgroundColor: "#9B59B6", color: "white" }}
+                >
+                  VIEW MORE COURSES →
+                </button>
+              </Link>
             </div>
           </div>
         </section>
