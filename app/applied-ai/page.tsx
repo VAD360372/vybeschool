@@ -22,18 +22,8 @@ export default function AppliedAIPage() {
       subtitle: "The Ultimate Hands-On AI Mastery Program",
       description:
         "Master Artificial Intelligence in your native Telugu through our comprehensive, project-driven AI Superstack course. Learn AI fundamentals, prompt engineering, top AI tools, website creation, voice agents, and AI-powered content marketing—all without writing a single line of code.",
-      image: "/ai-superstack-telugu-programming.png",
+      image: "/ai ss.jpg",
       color: "from-yellow-500 to-orange-500",
-    },
-    {
-      id: 3,
-      title: "AI Engineer Bootcamp",
-      subtitle: "Get the job-ready skills to land high-impact AI roles.",
-      description:
-        "Become job‑ready in Python, NLP, LLMs, vector databases, and app development. Master OpenAI, LangChain, Pinecone, Streamlit, and build a standout portfolio.",
-      image: "/aiengineer.jpeg",
-      color: "from-blue-600 to-indigo-600",
-      startHref: "https://chat.whatsapp.com/GW50XlYydFGDleL2dxcNSQ?mode=ems_copy_t",
     },
   ]
 
