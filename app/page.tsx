@@ -472,6 +472,11 @@ export default function Page() {
                   <video
                     className="w-full h-full object-cover rounded-lg"
                     controls
+                    playsInline
+                    preload="metadata"
+                    width="100%"
+                    height="auto"
+                    style={{ WebkitPlaysinline: true } as React.CSSProperties}
                   >
                     <source src="/WHAT IS VYBESCHOOL VIDEO.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -551,6 +556,11 @@ export default function Page() {
                   <video
                     className="w-full h-full object-cover rounded-lg"
                     controls
+                    playsInline
+                    preload="metadata"
+                    width="100%"
+                    height="auto"
+                    style={{ WebkitPlaysinline: true } as React.CSSProperties}
                   >
                     <source src="/WHAT IS VYBESCHOOL VIDEO.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -771,7 +781,11 @@ export default function Page() {
                   <video
                     className="w-full aspect-video object-cover"
                     controls
+                    playsInline
                     preload="metadata"
+                    width="100%"
+                    height="auto"
+                    style={{ WebkitPlaysinline: true } as React.CSSProperties}
                   >
                     <source src={video.video} type="video/mp4" />
                     Your browser does not support the video tag.
