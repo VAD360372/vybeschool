@@ -35,7 +35,7 @@ export default function AppliedAIPage() {
       tags: ["ChatGPT", "Productivity", "AI", "AI Tools"],
       duration: "55 min",
       category: "AI Tools",
-      image: "/ai ss.jpg",
+      image: "/gpt.webp",
     },
     {
       id: 2,
@@ -44,7 +44,7 @@ export default function AppliedAIPage() {
       tags: ["Web Dev", "Base44", "No-Code", "Development"],
       duration: "60 min",
       category: "Development",
-      image: "/web-development-coding-screen.png",
+      image: "/bass44.avif",
     },
     {
       id: 3,
@@ -53,7 +53,7 @@ export default function AppliedAIPage() {
       tags: ["Presentations", "AI", "Design", "Creative"],
       duration: "40 min",
       category: "Creative",
-      image: "/ai-presentation-tools.png",
+      image: "/presentation.png",
     },
     {
       id: 4,
@@ -62,7 +62,7 @@ export default function AppliedAIPage() {
       tags: ["React", "Deployment", "AI", "Development"],
       duration: "30 min",
       category: "Development",
-      image: "/vercel-v0-react-development.png",
+      image: "/v0.avif",
     },
     {
       id: 5,
@@ -71,7 +71,7 @@ export default function AppliedAIPage() {
       tags: ["No-Code", "Full-Stack", "AI", "Development"],
       duration: "45 min",
       category: "Development",
-      image: "/no-code-app-builder.png",
+      image: "/lovable.png",
     },
     {
       id: 6,
@@ -80,7 +80,7 @@ export default function AppliedAIPage() {
       tags: ["Prompting", "Claude", "Productivity", "AI Tools"],
       duration: "25 min",
       category: "AI Tools",
-      image: "/claude-ai-prompting-interface.png",
+      image: "/claude.webp",
     },
     {
       id: 7,
@@ -89,7 +89,7 @@ export default function AppliedAIPage() {
       tags: ["Coding", "AI", "IDE", "Development"],
       duration: "40 min",
       category: "Development",
-      image: "/ai-coding-ide.png",
+      image: "/cursor.webp",
     },
     {
       id: 8,
@@ -98,7 +98,7 @@ export default function AppliedAIPage() {
       tags: ["Art", "Images", "Creative"],
       duration: "35 min",
       category: "Creative",
-      image: "/midjourney-ai-art.png",
+      image: "/mj.svg",
     },
     {
       id: 9,
@@ -107,16 +107,16 @@ export default function AppliedAIPage() {
       tags: ["GitHub", "AI", "Coding", "Development"],
       duration: "20 min",
       category: "Development",
-      image: "/github-copilot-setup.png",
+      image: "/ghc.png",
     },
     {
       id: 10,
-      title: "ChatGPT API Integration",
+      title: "AI Tools API Integration",
       description: "Integrate ChatGPT into your applications with API calls.",
       tags: ["API", "ChatGPT", "Integration", "AI Tools"],
       duration: "50 min",
       category: "AI Tools",
-      image: "/chatgpt-api-integration-code.png",
+      image: "/chatgptapi.webp",
     },
     {
       id: 11,
@@ -125,7 +125,7 @@ export default function AppliedAIPage() {
       tags: ["Notion", "Automation", "Workflow", "Productivity"],
       duration: "30 min",
       category: "Productivity",
-      image: "/notion-ai-workflow.png",
+      image: "/notionai.webp",
     },
   ]
 
