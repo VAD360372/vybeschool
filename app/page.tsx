@@ -458,6 +458,173 @@ export default function Page() {
       `}</style>
 
       <main className="min-h-screen" style={{ backgroundColor: "#FFD700" }}>
+        {/* Hero Section */}
+        <div ref={heroRef} className="scroll-section px-4 md:px-6 py-8 md:py-12">
+          <div className="max-w-7xl mx-auto">
+            {/* Mobile Layout */}
+            <div className="md:hidden">
+              {/* Video Player - Mobile First */}
+              <div className="mb-6">
+                <div
+                  className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden rounded-lg"
+                  style={{ backgroundColor: "#2C3E50" }}
+                >
+                  <video
+                    className="w-full h-full object-cover rounded-lg"
+                    controls
+                  >
+                    <source src="/Bootcamp Video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <h3 className="mt-4 text-xl font-black text-center text-black">WHAT'S NEW AT VYBESCHOOL</h3>
+              </div>
+
+              {/* Main Content */}
+              <div className="text-center mb-6">
+                <h1 className="text-4xl font-black leading-none text-black mb-2">VYBE</h1>
+                <h1
+                  className="text-4xl font-black leading-none border-4 border-black shadow-[6px_6px_0_0_#000] px-4 py-2 inline-block mb-4 rounded-lg"
+                  style={{ backgroundColor: "#4285F4", color: "white" }}
+                >
+                  SCHOOL
+                </h1>
+                <p className="text-xl font-black mb-6 text-black">LEARN AI IN YOUR LANGUAGE</p>
+              </div>
+
+              {/* Language Section */}
+              <div className="mb-8">
+                <h2 className="text-2xl font-black text-left text-black mb-6">AVAILABLE LANGUAGES</h2>
+                <div className="flex flex-wrap gap-4 mb-6">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      className="w-36 p-4 border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
+                      style={{ backgroundColor: lang.color }}
+                      onClick={() => setActiveLanguage(lang.code)}
+                    >
+                      <div className="text-sm font-black text-white text-center">{lang.name}</div>
+                    </button>
+                  ))}
+                </div>
+                
+                {/* Language Info Button */}
+                <div className="text-left">
+                  <button
+                    className="px-6 py-3 text-lg font-black border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all rounded-lg cursor-pointer"
+                    style={{ backgroundColor: "#000", color: "white" }}
+                  >
+                    Available languages in recordings & live sessions
+                  </button>
+                </div>
+              </div>
+
+              {/* Start Learning + Live Online Classes Buttons - Mobile */}
+              <div className="md:hidden grid grid-cols-1 gap-3">
+                <Link href="/applied-ai">
+                  <button
+                    className="w-full px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
+                    style={{ backgroundColor: "#4285F4", color: "white" }}
+                  >
+                    START LEARNING →
+                  </button>
+                </Link>
+                <Link href="/webinars">
+                  <button
+                    className="w-full px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
+                    style={{ backgroundColor: "#25D366", color: "white" }}
+                  >
+                    LIVE ONLINE CLASSES →
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+              {/* Video Player */}
+              <div className="order-2 md:order-1">
+                <div
+                  className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden rounded-lg"
+                  style={{ backgroundColor: "#2C3E50" }}
+                >
+                  <video
+                    className="w-full h-full object-cover rounded-lg"
+                    controls
+                  >
+                    <source src="/Bootcamp Video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <h3 className="mt-4 text-xl md:text-2xl lg:text-3xl font-black text-center text-black">
+                  WHAT'S NEW AT VYBESCHOOL
+                </h3>
+              </div>
+
+              {/* Main Content */}
+              <div className="order-1 md:order-2">
+                <div className="mb-8">
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-none text-black mb-2">VYBE</h1>
+                  <h1
+                    className="text-4xl md:text-6xl lg:text-7xl font-black leading-none border-4 border-black shadow-[6px_6px_0_0_#000] px-4 py-2 inline-block rounded-lg"
+                    style={{ backgroundColor: "#4285F4", color: "white" }}
+                  >
+                    SCHOOL
+                  </h1>
+                  <p className="text-xl md:text-2xl font-black mt-4 text-black">LEARN AI IN YOUR LANGUAGE</p>
+                </div>
+
+                {/* Language Section */}
+                <div className="mb-8">
+                  <h2 className="text-2xl md:text-3xl font-black text-left text-black mb-6">AVAILABLE LANGUAGES</h2>
+                  <div className="flex gap-4 mb-6">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        className="w-44 p-4 border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
+                        style={{ backgroundColor: lang.color }}
+                        onClick={() => setActiveLanguage(lang.code)}
+                      >
+                        <div className="text-base font-black text-white text-center">{lang.name}</div>
+                      </button>
+                    ))}
+                  </div>
+                  
+                  {/* Language Info Button */}
+                  <div className="text-left">
+                    <button
+                      className="px-6 py-3 text-lg font-black border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all rounded-lg cursor-pointer"
+                      style={{ backgroundColor: "#000", color: "white" }}
+                    >
+                      Available languages in recordings & live sessions
+                    </button>
+                  </div>
+                </div>
+
+                {/* Start Learning + Live Online Classes Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link href="/applied-ai">
+                    <button
+                      className="w-full md:w-auto px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
+                      style={{ backgroundColor: "#4285F4", color: "white" }}
+                    >
+                      START LEARNING →
+                    </button>
+                  </Link>
+                  <Link href="/webinars">
+                    <button
+                      className="w-full md:w-auto px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
+                      style={{ backgroundColor: "#25D366", color: "white" }}
+                    >
+                      LIVE ONLINE CLASSES →
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Video Gallery Section */}
         <section
           ref={galleryRef}
@@ -565,186 +732,17 @@ export default function Page() {
 
               {/* Join Now Button */}
               <div className="text-center">
-                <a
-                  href="https://nexify.club/dp/68c020ea3ea1a10319f61326"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/webinars"
                   className="inline-block px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all cursor-pointer"
                   style={{ backgroundColor: "#25D366", color: "white" }}
                 >
                   JOIN NOW →
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Hero Section */}
-        <div ref={heroRef} className="scroll-section px-4 md:px-6 py-8 md:py-12">
-          <div className="max-w-7xl mx-auto">
-            {/* Mobile Layout */}
-            <div className="md:hidden">
-              {/* Video Player - Mobile First */}
-              <div className="mb-6">
-                <div
-                  className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden rounded-lg"
-                  style={{ backgroundColor: "#2C3E50" }}
-                >
-                  <video
-                    className="w-full h-full object-cover rounded-lg"
-                    controls
-                  >
-                    <source src="/Bootcamp Video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-                <h3 className="mt-4 text-xl font-black text-center text-black">WHAT'S NEW AT VYBESCHOOL</h3>
-              </div>
-
-              {/* Main Content */}
-              <div className="text-center mb-6">
-                <h1 className="text-4xl font-black leading-none text-black mb-2">VYBE</h1>
-                <h1
-                  className="text-4xl font-black leading-none border-4 border-black shadow-[6px_6px_0_0_#000] px-4 py-2 inline-block mb-4 rounded-lg"
-                  style={{ backgroundColor: "#4285F4", color: "white" }}
-                >
-                  SCHOOL
-                </h1>
-                <p className="text-xl font-black mb-6 text-black">LEARN AI IN YOUR LANGUAGE</p>
-              </div>
-
-              {/* Language Section */}
-              <div className="mb-8">
-                <h2 className="text-2xl font-black text-left text-black mb-6">AVAILABLE LANGUAGES</h2>
-                <div className="flex flex-wrap gap-4 mb-6">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      className="w-36 p-4 border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
-                      style={{ backgroundColor: lang.color }}
-                      onClick={() => setActiveLanguage(lang.code)}
-                    >
-                      <div className="text-sm font-black text-white text-center">{lang.name}</div>
-                    </button>
-                  ))}
-                </div>
-                
-                {/* Language Info Button */}
-                <div className="text-left">
-                  <button
-                    className="px-6 py-3 text-lg font-black border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all rounded-lg cursor-pointer"
-                    style={{ backgroundColor: "#000", color: "white" }}
-                  >
-                    Available languages in recordings & live sessions
-                  </button>
-                </div>
-              </div>
-
-              {/* Start Learning + Live Online Classes Buttons - Mobile */}
-              <div className="md:hidden grid grid-cols-1 gap-3">
-                <Link href="/applied-ai">
-                  <button
-                    className="w-full px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
-                    style={{ backgroundColor: "#4285F4", color: "white" }}
-                  >
-                    START LEARNING →
-                  </button>
-                </Link>
-                <Link href="/live-classes">
-                  <button
-                    className="w-full px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
-                    style={{ backgroundColor: "#25D366", color: "white" }}
-                  >
-                    LIVE ONLINE CLASSES →
-                  </button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Desktop Layout */}
-            <div className="hidden md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-              {/* Video Player */}
-              <div className="order-2 md:order-1">
-                <div
-                  className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden rounded-lg"
-                  style={{ backgroundColor: "#2C3E50" }}
-                >
-                  <video
-                    className="w-full h-full object-cover rounded-lg"
-                    controls
-                  >
-                    <source src="/Bootcamp Video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-                <h3 className="mt-4 text-xl md:text-2xl lg:text-3xl font-black text-center text-black">
-                  WHAT'S NEW AT VYBESCHOOL
-                </h3>
-              </div>
-
-              {/* Main Content */}
-              <div className="order-1 md:order-2">
-                <div className="mb-8">
-                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-none text-black mb-2">VYBE</h1>
-                  <h1
-                    className="text-4xl md:text-6xl lg:text-7xl font-black leading-none border-4 border-black shadow-[6px_6px_0_0_#000] px-4 py-2 inline-block rounded-lg"
-                    style={{ backgroundColor: "#4285F4", color: "white" }}
-                  >
-                    SCHOOL
-                  </h1>
-                  <p className="text-xl md:text-2xl font-black mt-4 text-black">LEARN AI IN YOUR LANGUAGE</p>
-                </div>
-
-                {/* Language Section */}
-                <div className="mb-8">
-                  <h2 className="text-2xl md:text-3xl font-black text-left text-black mb-6">AVAILABLE LANGUAGES</h2>
-                  <div className="flex gap-4 mb-6">
-                    {languages.map((lang) => (
-                      <button
-                        key={lang.code}
-                        className="w-44 p-4 border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
-                        style={{ backgroundColor: lang.color }}
-                        onClick={() => setActiveLanguage(lang.code)}
-                      >
-                        <div className="text-base font-black text-white text-center">{lang.name}</div>
-                      </button>
-                    ))}
-                  </div>
-                  
-                  {/* Language Info Button */}
-                  <div className="text-left">
-                    <button
-                      className="px-6 py-3 text-lg font-black border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all rounded-lg cursor-pointer"
-                      style={{ backgroundColor: "#000", color: "white" }}
-                    >
-                      Available languages in recordings & live sessions
-                    </button>
-                  </div>
-                </div>
-
-                {/* Start Learning + Live Online Classes Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Link href="/applied-ai">
-                    <button
-                      className="w-full md:w-auto px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
-                      style={{ backgroundColor: "#4285F4", color: "white" }}
-                    >
-                      START LEARNING →
-                    </button>
-                  </Link>
-                  <Link href="/live-classes">
-                    <button
-                      className="w-full md:w-auto px-8 py-4 text-xl font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-2 rounded-xl cursor-pointer"
-                      style={{ backgroundColor: "#25D366", color: "white" }}
-                    >
-                      LIVE ONLINE CLASSES →
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Discover Section */}
         <section

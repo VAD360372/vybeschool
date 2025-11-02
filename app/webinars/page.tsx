@@ -24,7 +24,7 @@ export default function WebinarsPage() {
           {/* Webinar Card - Left Column */}
           <div className="w-full flex justify-start">
             <div
-              className="border-4 border-black shadow-[8px_8px_0_0_#000] rounded-xl bg-white overflow-hidden transition-all hover:shadow-[12px_12px_0_0_#000] max-w-xs w-full"
+              className="border-4 border-black shadow-[8px_8px_0_0_#000] rounded-xl bg-white overflow-hidden transition-all hover:shadow-[12px_12px_0_0_#000] max-w-sm w-full"
             >
               <div className="relative w-full" style={{ paddingBottom: "140%" }}>
                 <Image
@@ -34,13 +34,13 @@ export default function WebinarsPage() {
                   className="object-contain"
                 />
               </div>
-              <div className="p-3">
-                <h2 className="text-lg md:text-xl font-black text-black mb-2 text-center">
+              <div className="pt-2 px-3 pb-3">
+                <h2 className="text-lg md:text-xl font-black text-black mb-2 text-center -mt-1">
                   AI Starter Program Telugu
                 </h2>
                 {!showDetails && (
                   <button
-                    className="w-full px-4 py-2 text-sm font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
+                    className="w-full px-4 py-2 text-sm font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg -mt-1"
                     style={{ backgroundColor: "#10B981", color: "white" }}
                     onClick={(e) => {
                       e.stopPropagation()
@@ -67,49 +67,52 @@ export default function WebinarsPage() {
 
                 {/* Day 1 */}
                 <div className="mb-3 p-3 border-2 border-black rounded-lg bg-yellow-50">
-                  <h3 className="text-base font-black text-black mb-1">
-                    🗓 Day 1: Inside Vybe — Meet the Founders
+                  <h3 className="text-base font-black text-black mb-2">
+                    Day 1: Inside Vybe — Meet the Founders
                   </h3>
-                  <p className="text-xs text-black font-bold">
-                    Interact directly with Maneesh & Anjudeep, the founders of VybeSchool and LumiAI. Get a transparent look at how our team works, what tools we use daily, and how AI runs everything we build.
+                  <p className="text-xs text-black font-bold leading-relaxed">
+                    Interact directly with Maneesh & Anjudeep, the founders of VybeSchool and LumiAI. 
+                    Get a transparent look at how our team works, what tools we use daily, and how AI runs everything we build.
                   </p>
                 </div>
 
                 {/* Day 2 */}
                 <div className="mb-3 p-3 border-2 border-black rounded-lg bg-blue-50">
-                  <h3 className="text-base font-black text-black mb-1">
-                    🧠 Day 2: AI Deep Dive — Solve, Build, Integrate
+                  <h3 className="text-base font-black text-black mb-2">
+                    Day 2: AI Deep Dive — Solve, Build, Integrate
                   </h3>
-                  <p className="text-xs text-black font-bold">
-                    Bring your real questions business, student, or creator-related — and we'll guide you 1:1 on how to actually use AI in your work or studies. From automating tasks to building your own AI workflows.
+                  <p className="text-xs text-black font-bold leading-relaxed">
+                    Bring your real questions business, student, or creator-related and we'll guide you 1:1 on how to actually use AI in your work or studies. 
+                    <br />
+                    From automating tasks to building your own AI workflows.
                   </p>
                 </div>
 
                 {/* Day 3 */}
                 <div className="mb-3 p-3 border-2 border-black rounded-lg bg-green-50">
-                  <h3 className="text-base font-black text-black mb-1">
-                    💼 Day 3: Monetize AI — From Skills to Clients
+                  <h3 className="text-base font-black text-black mb-2">
+                    Day 3: Monetize AI — From Skills to Clients
                   </h3>
-                  <p className="text-xs text-black font-bold mb-1">
+                  <p className="text-xs text-black font-bold mb-2 leading-relaxed">
                     Join our LumiAI Services team lead, Santosh, as we break down the entire client journey:
                   </p>
-                  <ul className="text-xs text-black font-bold list-none ml-2 space-y-0.5">
-                    <li>💬 How we find clients</li>
-                    <li>💰 How we quote & close deals</li>
-                    <li>⚙ What tools we use to deliver</li>
-                    <li>📈 And how you can start doing it too</li>
+                  <ul className="text-xs text-black font-bold list-none space-y-1.5 ml-0 leading-relaxed">
+                    <li>• How we find clients</li>
+                    <li>• How we quote & close deals</li>
+                    <li>• What tools we use to deliver</li>
+                    <li>• And how you can start doing it too</li>
                   </ul>
                 </div>
 
                 <div className="mb-3 p-3 border-2 border-black rounded-lg bg-gray-100">
                   <p className="text-xs font-black text-black">
-                    This is not a webinar. It's an inside look at India's growing AI startup culture — taught by the ones building it. So if you've ever wondered "Where do I even start with AI?" This is your start.
+                    This is not a webinar. It's an inside look at India's growing AI startup culture taught by the ones building it. So if you've ever wondered "Where do I even start with AI?" This is your start.
                   </p>
                 </div>
 
                 <div className="mb-4 text-center">
                   <p className="text-sm font-black text-black mb-1">
-                    💬 Join the Founders Live Interact. Learn. Grow.
+                    Join the Founders Live Interact. Learn. Grow.
                   </p>
                   <p className="text-xs font-bold text-black">
                     💗 Founders of VybeSchool: Maneesh Bommakanti & Anjudeep Veerla

@@ -46,7 +46,7 @@ export default function TeamPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6 text-center">
+            <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6">
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-black">
                 <img
                   src="/veerla-anjudeep-professional.jpg"
@@ -54,9 +54,9 @@ export default function TeamPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="font-bold text-lg mb-1">VEERLA ANJUDEEP</h3>
-              <p className="text-blue-600 font-semibold mb-2">No-code/Low-code AI Expert</p>
-              <p className="text-sm text-gray-600 mb-4">
+              <h3 className="font-bold text-lg mb-2 text-left">VEERLA ANJUDEEP</h3>
+              <p className="text-blue-600 font-semibold mb-2 text-left">No-code/Low-code AI Expert</p>
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed text-left">
                 4+ years of experience in building AI chatbots, voice agents, and websites. AI Superstack Mentor.
               </p>
               <div className="flex justify-center gap-2">
@@ -68,19 +68,16 @@ export default function TeamPage() {
                 >
                   <Linkedin size={16} />
                 </a>
-                <button className="bg-pink-500 text-white p-2 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all">
-                  <Instagram size={16} />
-                </button>
               </div>
             </div>
 
-            <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6 text-center">
+            <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6">
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-black">
                 <img src="/Maneesh.jpg" alt="Bommakanti Maneesh" className="w-full h-full object-cover" />
               </div>
-              <h3 className="font-bold text-lg mb-1">BOMMAKANTI MANEESH</h3>
-              <p className="text-blue-600 font-semibold mb-2">Applied AI Expert</p>
-              <p className="text-sm text-gray-600 mb-4">AI Creator,No-code/Low-code Developer, R&D AI Specialist, and AI Superstack Mentor.</p>
+              <h3 className="font-bold text-lg mb-2 text-left">BOMMAKANTI MANEESH</h3>
+              <p className="text-blue-600 font-semibold mb-2 text-left">AI&DS Graduate</p>
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed text-left">AI Creator, No-code/Low-code Developer, R&D AI Specialist, and AI Superstack Mentor.</p>
               <div className="flex justify-center gap-2">
                 <a
                   href="https://www.linkedin.com/in/bommakanti-maneesh-0494972b3"
@@ -90,57 +87,36 @@ export default function TeamPage() {
                 >
                   <Linkedin size={16} />
                 </a>
-                <button className="bg-pink-500 text-white p-2 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all">
+                <a
+                  href="https://www.instagram.com/lumi.ai_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-pink-500 text-white p-2 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all"
+                >
                   <Instagram size={16} />
-                </button>
+                </a>
               </div>
             </div>
 
-            <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6 text-center">
+            <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6">
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-black">
                 <img src="/maneesh-headshot.png" alt="Vikas Chary Alwala" className="w-full h-full object-cover" />
               </div>
-              <h3 className="font-bold text-lg mb-1">VIKAS CHARY ALWALA</h3>
-              <p className="text-blue-600 font-semibold mb-2">Technology Specialist</p>
-              <p className="text-sm text-gray-600 mb-4">Experienced technology professional with expertise in software development and innovation.</p>
-              <div className="flex justify-center gap-2">
-                <a
-                  href="https://www.linkedin.com/in/vikaschary/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-600 text-white p-2 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all"
-                >
-                  <Linkedin size={16} />
-                </a>
-                <button className="bg-pink-500 text-white p-2 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all">
-                  <Instagram size={16} />
-                </button>
-              </div>
+              <h3 className="font-bold text-lg mb-2 text-left">VIKAS CHARY ALWALA</h3>
+              <p className="text-blue-600 font-semibold mb-2 text-left">Technology Specialist</p>
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed text-left">Experienced technology professional with expertise in software development and innovation.</p>
             </div>
 
             {/* Uday */}
-            <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6 text-center">
+            <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6">
               <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-black">
                 <img src="/uday.JPG" alt="Uday" className="w-full h-full object-cover" onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/placeholder-user.jpg" }} />
               </div>
-              <h3 className="font-bold text-lg mb-1">UDAY</h3>
-              <p className="text-blue-600 font-semibold mb-2">Senior Software Engineer / AI Engineer</p>
-              <p className="text-sm text-gray-600 mb-4">
+              <h3 className="font-bold text-lg mb-2 text-left">UDAY</h3>
+              <p className="text-blue-600 font-semibold mb-2 text-left">Senior Software Engineer / AI Engineer</p>
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed text-left">
                 11+ years of experience in AI, cloud, and enterprise systems. Expert in AI agents, LLMOps, multimodal applications, and GPU-optimized AI workflows. Passionate about teaching job-ready AI skills that bridge theory and real-world deployment.
               </p>
-              <div className="flex justify-center gap-2">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-600 text-white p-2 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all"
-                >
-                  <Linkedin size={16} />
-                </a>
-                <button className="bg-pink-500 text-white p-2 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all">
-                  <Instagram size={16} />
-                </button>
-              </div>
             </div>
           </div>
         </div>
