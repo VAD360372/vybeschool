@@ -9,7 +9,7 @@ export default function AppliedAIPage() {
   const courses = [
     {
       id: 1,
-      title: "Flux AI: Train Your Face to Create Cinematic Images – Complete Guide",
+      title: "Flux AI Complete Guide",
       subtitle: "Master AI-Powered Portrait Creation",
       description:
         "Learn how to train Flux AI with your own face to generate stunning, cinematic portraits and professional headshots using advanced AI technology.",
@@ -35,7 +35,7 @@ export default function AppliedAIPage() {
       tags: ["ChatGPT", "Productivity", "AI", "AI Tools"],
       duration: "55 min",
       category: "AI Tools",
-      image: "/chatgpt-tutorial-interface.png",
+      image: "/ai ss.jpg",
     },
     {
       id: 2,
