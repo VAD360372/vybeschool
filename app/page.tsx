@@ -473,11 +473,11 @@ export default function Page() {
                     className="w-full h-full object-cover rounded-lg"
                     controls
                   >
-                    <source src="/Bootcamp Video.mp4" type="video/mp4" />
+                    <source src="/WHAT IS VYBESCHOOL VIDEO.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
-                <h3 className="mt-4 text-xl font-black text-center text-black">WHAT'S NEW AT VYBESCHOOL</h3>
+                <h3 className="mt-4 text-xl font-black text-center text-black">WHAT IS VYBESCHOOL</h3>
               </div>
 
               {/* Main Content */}
@@ -552,12 +552,12 @@ export default function Page() {
                     className="w-full h-full object-cover rounded-lg"
                     controls
                   >
-                    <source src="/Bootcamp Video.mp4" type="video/mp4" />
+                    <source src="/WHAT IS VYBESCHOOL VIDEO.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
                 <h3 className="mt-4 text-xl md:text-2xl lg:text-3xl font-black text-center text-black">
-                  WHAT'S NEW AT VYBESCHOOL
+                  WHAT IS VYBESCHOOL
                 </h3>
               </div>
 
