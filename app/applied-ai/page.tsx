@@ -5,6 +5,9 @@ import Link from "next/link"
 
 export default function AppliedAIPage() {
   const [activeTab, setActiveTab] = useState("courses")
+  const [searchQuery, setSearchQuery] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("All Categories")
+  const [sortBy, setSortBy] = useState("Popularity")
 
   const courses = [
     {
@@ -129,6 +132,43 @@ export default function AppliedAIPage() {
     },
   ]
 
+  // Filter and sort dynamites
+  const filteredDynamites = dynamites
+    .filter((dynamite) => {
+      // Category filter
+      const categoryMatch = selectedCategory === "All Categories" || dynamite.category === selectedCategory
+
+      // Search filter (semantic search on title, description, and tags)
+      const searchLower = searchQuery.toLowerCase()
+      const searchMatch =
+        searchQuery === "" ||
+        dynamite.title.toLowerCase().includes(searchLower) ||
+        dynamite.description.toLowerCase().includes(searchLower) ||
+        dynamite.tags.some((tag) => tag.toLowerCase().includes(searchLower))
+
+      return categoryMatch && searchMatch
+    })
+    .sort((a, b) => {
+      // Sort by popularity (default - by ID as a proxy for popularity)
+      if (sortBy === "Popularity") {
+        return a.id - b.id
+      }
+      // Sort by duration (extract minutes and compare)
+      if (sortBy === "Duration") {
+        const durationA = parseInt(a.duration)
+        const durationB = parseInt(b.duration)
+        return durationA - durationB
+      }
+      // Sort by newest (by ID descending)
+      if (sortBy === "Newest") {
+        return b.id - a.id
+      }
+      return 0
+    })
+
+  // Get unique categories for dropdown
+  const categories = ["All Categories", ...Array.from(new Set(dynamites.map((d) => d.category)))]
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -222,28 +262,45 @@ export default function AppliedAIPage() {
                 <input
                   type="text"
                   placeholder="Search dynamites..."
-                  className="w-full px-4 py-3 border-4 border-black rounded-lg font-semibold text-black placeholder-gray-600 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-4 py-3 border-4 border-black rounded-lg font-semibold text-black placeholder-gray-600 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
               <div className="flex gap-4">
-                <select className="px-4 py-3 border-4 border-black rounded-lg font-semibold text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-white">
-                  <option>All Categories</option>
-                  <option>AI Tools</option>
-                  <option>Development</option>
-                  <option>Creative</option>
-                  <option>Productivity</option>
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="px-4 py-3 border-4 border-black rounded-lg font-semibold text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+                >
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
                 </select>
-                <select className="px-4 py-3 border-4 border-black rounded-lg font-semibold text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-white">
-                  <option>Popularity</option>
-                  <option>Duration</option>
-                  <option>Newest</option>
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="hidden"
+                >
+                  <option value="Popularity">Popularity</option>
+                  <option value="Duration">Duration</option>
+                  <option value="Newest">Newest</option>
                 </select>
               </div>
             </div>
 
+            {/* Results count */}
+            {filteredDynamites.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-xl font-bold text-black">No dynamites found matching your search.</p>
+              </div>
+            )}
+
             {/* Dynamites Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {dynamites.map((dynamite) => (
+              {filteredDynamites.map((dynamite) => (
                 <div
                   key={dynamite.id}
                   className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg overflow-hidden flex flex-col"
