@@ -1206,20 +1206,17 @@ export default function Page() {
         >
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start mb-12">
-              {/* Mission & Vision Video */}
+              {/* Mission & Vision Image (replaced video) */}
               <div>
                 <div
-                  className="aspect-video border-4 shadow-[8px_8px_0_0_#FFD700] relative overflow-hidden mb-4"
-                  style={{ backgroundColor: "#2C3E50", borderColor: "#FFD700" }}
+                  className="border-4 shadow-[8px_8px_0_0_#FFD700] rounded-lg overflow-hidden mb-4 max-w-md mx-auto"
+                  style={{ borderColor: "#FFD700", backgroundColor: "#fff" }}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button
-                      className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 shadow-[4px_4px_0_0_#FFD700] flex items-center justify-center hover:shadow-[2px_2px_0_0_#FFD700] transition-all"
-                      style={{ backgroundColor: "#FF4757", borderColor: "#FFD700" }}
-                    >
-                      <Play className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="white" />
-                    </button>
-                  </div>
+                  <img
+                    src="/GIT.png"
+                    alt="VybeSchool Mission & Vision"
+                    className="w-full h-auto object-contain bg-white"
+                  />
                 </div>
                 <h3 className="text-xl md:text-2xl font-black text-center" style={{ color: "#FFD700" }}>
                   VYBESCHOOL MISSION & VISION
@@ -1231,26 +1228,31 @@ export default function Page() {
                 <h3 className="text-2xl md:text-3xl font-black mb-6" style={{ color: "#FFD700" }}>
                   GET IN TOUCH
                 </h3>
-                <div className="space-y-4">
+                <div className="flex items-center gap-4">
                   <a
                     href="https://wa.me/916301962520"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full p-4 text-lg font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-3 cursor-pointer"
+                    aria-label="WhatsApp"
+                    className="w-12 h-12 md:w-14 md:h-14 border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center rounded-lg cursor-pointer"
                     style={{ backgroundColor: "#25D366", color: "white" }}
                   >
                     <MessageCircle className="w-5 h-5" />
-                    WHATSAPP: +91 63019 62520
                   </a>
                   <button
                     onClick={() => setShowEmail(!showEmail)}
-                    className="w-full p-4 text-lg font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center gap-3 cursor-pointer hover:scale-105 transform"
+                    aria-label="Email"
+                    className="w-12 h-12 md:w-14 md:h-14 border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all flex items-center justify-center rounded-lg cursor-pointer"
                     style={{ backgroundColor: "#4285F4", color: "white" }}
                   >
                     <Mail className="w-5 h-5" />
-                    {showEmail ? "vybeschool.com@gmail.com" : "CONTACT US VIA EMAIL"}
                   </button>
                 </div>
+                {showEmail && (
+                  <div className="mt-2 text-sm font-bold" style={{ color: "#FFD700" }}>
+                    vybeschool.com@gmail.com
+                  </div>
+                )}
               </div>
             </div>
 

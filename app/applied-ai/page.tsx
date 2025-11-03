@@ -18,6 +18,7 @@ export default function AppliedAIPage() {
         "Learn how to train Flux AI with your own face to generate stunning, cinematic portraits and professional headshots using advanced AI technology.",
       image: "/ai-face-training-portraits.png",
       color: "from-purple-500 to-pink-500",
+      startHref: "https://vybeschool.akamai.net.in/new-courses/7-flux-ai-train-your-face-to-create-cinematic-images-complete-guide",
     },
     {
       id: 2,
@@ -27,6 +28,7 @@ export default function AppliedAIPage() {
         "Master Artificial Intelligence in your native Telugu through our comprehensive, project-driven AI Superstack course. Learn AI fundamentals, prompt engineering, top AI tools, website creation, voice agents, and AI-powered content marketing—all without writing a single line of code.",
       image: "/ai ss.jpg",
       color: "from-yellow-500 to-orange-500",
+      startHref: "https://vybeschool.akamai.net.in/new-courses/2-ai-superstack-telugu",
     },
   ]
 
