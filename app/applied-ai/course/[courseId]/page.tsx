@@ -209,24 +209,22 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
                   />
                 </div>
                 {/* Course Modules moved below the image for AI Superstack */}
-                {courseId !== 1 && (
-                  <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-8 mt-8">
-                    <h2 className="text-2xl font-bold text-black mb-6 border-b-4 border-black pb-2">Course Modules</h2>
-                    <div className="space-y-4">
-                      {course.modules.map((module, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center gap-4 p-4 bg-gray-50 border-2 border-black rounded-lg"
-                        >
-                          <div className="bg-black text-yellow-400 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
-                            {index + 1}
-                          </div>
-                          <span className="text-black font-semibold">{module}</span>
+                <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-8 mt-8">
+                  <h2 className="text-2xl font-bold text-black mb-6 border-b-4 border-black pb-2">Course Modules</h2>
+                  <div className="space-y-4">
+                    {course.modules.map((module, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center gap-4 p-4 bg-gray-50 border-2 border-black rounded-lg"
+                      >
+                        <div className="bg-black text-yellow-400 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                          {index + 1}
                         </div>
-                      ))}
-                    </div>
+                        <span className="text-black font-semibold">{module}</span>
+                      </div>
+                    ))}
                   </div>
-                )}
+                </div>
               </div>
               
               {/* Right Side - Content */}
@@ -544,7 +542,7 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
             Enroll in this course and begin your AI journey with VybeSchool today.
           </p>
           <button
-            onClick={() => window.open("https://vybeschool.akamai.net.in/", "_blank")}
+            onClick={() => window.open(courseId === 1 ? "https://vybeschool.akamai.net.in/new-courses/7-flux-ai-train-your-face-to-create-cinematic-images-complete-guide" : "https://vybeschool.akamai.net.in/new-courses/2-ai-superstack-telugu", "_blank")}
             className="bg-yellow-400 text-black px-12 py-4 font-bold text-xl border-4 border-white shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] rounded-lg hover:bg-yellow-500 transition-colors cursor-pointer"
           >
             START LEARNING NOW
