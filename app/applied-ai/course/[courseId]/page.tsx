@@ -170,30 +170,258 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
         </div>
       </div>
 
-      {/* Video Hero Section */}
-      <div className="bg-black py-12">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="relative aspect-video bg-gray-900 border-4 border-yellow-400 shadow-[8px_8px_0px_0px_rgba(255,193,7,1)] rounded-lg overflow-hidden">
-            <iframe
-              src={course.videoUrl}
-              title={course.title}
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-              <div className="bg-yellow-400 text-black p-4 rounded-full border-4 border-white shadow-lg">
-                <Play size={32} fill="currentColor" />
+      {/* Video/Image Hero Section */}
+      {courseId !== 2 && courseId !== 1 && (
+        // Other courses - Video Container
+        <div className="bg-black py-12">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="relative aspect-video bg-gray-900 border-4 border-yellow-400 shadow-[8px_8px_0px_0px_rgba(255,193,7,1)] rounded-lg overflow-hidden">
+              <iframe
+                src={course.videoUrl}
+                title={course.title}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                <div className="bg-yellow-400 text-black p-4 rounded-full border-4 border-white shadow-lg">
+                  <Play size={32} fill="currentColor" />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Course Content */}
       <div className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {courseId === 2 ? (
+            // AI Superstack - Two Column Layout (Image Left, Content Right)
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              {/* Left Side - Image */}
+              <div className="w-full">
+                <div className="border-4 border-black shadow-[12px_12px_0_0_#000] rounded-lg overflow-hidden">
+                  <img
+                    src="/ai ss.jpg"
+                    alt={course.title}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                {/* Course Modules moved below the image for AI Superstack */}
+                {courseId !== 1 && (
+                  <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-8 mt-8">
+                    <h2 className="text-2xl font-bold text-black mb-6 border-b-4 border-black pb-2">Course Modules</h2>
+                    <div className="space-y-4">
+                      {course.modules.map((module, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center gap-4 p-4 bg-gray-50 border-2 border-black rounded-lg"
+                        >
+                          <div className="bg-black text-yellow-400 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                            {index + 1}
+                          </div>
+                          <span className="text-black font-semibold">{module}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+              
+              {/* Right Side - Content */}
+              <div className="space-y-8">
+              {/* Meta Description */}
+              <div className="bg-gray-50 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-8">
+                <h2 className="text-2xl font-bold text-black mb-4 border-b-4 border-black pb-2">Course Overview</h2>
+                <p className="text-black font-semibold leading-relaxed text-lg">{course.metaDescription}</p>
+              </div>
+
+              {/* Learning Outcomes */}
+              <div className="bg-yellow-50 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-8">
+                <h2 className="text-2xl font-bold text-black mb-6 border-b-4 border-black pb-2">What You'll Learn</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {course.learningOutcomes.map((outcome, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <div className="bg-black text-yellow-400 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">
+                        ✓
+                      </div>
+                      <span className="text-black font-semibold">{outcome}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Enroll Now (added for AI Superstack) */}
+              <div className="bg-black text-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">Enroll Now</h3>
+                <div className="space-y-4">
+                  <button
+                    onClick={() => window.open("https://vybeschool.akamai.net.in/", "_blank")}
+                    className="w-full bg-yellow-400 text-black px-6 py-4 font-bold text-lg border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] rounded-lg hover:bg-yellow-500 transition-colors cursor-pointer"
+                  >
+                    START LEARNING NOW
+                  </button>
+                  <div className="text-center text-sm">
+                    <p className="mb-2">✓ Lifetime Access</p>
+                    <p className="mb-2">✓ Certificate of Completion</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* VybeMentors (added for AI Superstack) */}
+              <div className="bg-green-50 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6">
+                <h3 className="text-lg font-bold text-black mb-4">VybeMentors</h3>
+                <div className="space-y-4">
+                  {/* Anjudeep */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-black">
+                      <img
+                        src="/veerla-anjudeep-professional.jpg"
+                        alt="Veerla Anjudeep"
+                        className="w-full h-full object-cover"
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/placeholder-user.jpg" }}
+                      />
+                    </div>
+                    <div>
+                      <div className="font-bold text-black text-sm">VEERLA ANJUDEEP</div>
+                      <div className="text-xs text-gray-600 font-semibold">No-code/Low-code AI Expert</div>
+                      <div className="text-xs text-gray-600">4+ years experience</div>
+                    </div>
+                  </div>
+
+                  {/* Maneesh */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-black">
+                      <img
+                        src="/Maneesh.jpg"
+                        alt="Bommakanti Maneesh"
+                        className="w-full h-full object-cover"
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/placeholder-user.jpg" }}
+                      />
+                    </div>
+                    <div>
+                      <div className="font-bold text-black text-sm">BOMMAKANTI MANEESH</div>
+                      <div className="text-xs text-gray-600 font-semibold">Applied AI Expert</div>
+                      <div className="text-xs text-gray-600">R&D AI Specialist</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Prerequisites (added for AI Superstack) */}
+              <div className="bg-blue-50 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6">
+                <h3 className="text-lg font-bold text-black mb-3">Prerequisites</h3>
+                <p className="text-black font-semibold">{course.prerequisites}</p>
+              </div>
+
+              
+              </div>
+              </div>
+          ) : courseId === 1 ? (
+            // Flux Face Training - Two Column Layout (Image Left, Content Right)
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              {/* Left Side - Image */}
+              <div className="w-full">
+                <div className="border-4 border-black shadow-[12px_12px_0_0_#000] rounded-lg overflow-hidden">
+                  <img
+                    src="/ai-face-training-portraits.png"
+                    alt={course.title}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                {/* Course Modules moved below the image for Flux course */}
+                <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-8 mt-8">
+                  <h2 className="text-2xl font-bold text-black mb-6 border-b-4 border-black pb-2">Course Modules</h2>
+                  <div className="space-y-4">
+                    {course.modules.map((module, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center gap-4 p-4 bg-gray-50 border-2 border-black rounded-lg"
+                      >
+                        <div className="bg-black text-yellow-400 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                          {index + 1}
+                        </div>
+                        <span className="text-black font-semibold">{module}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - Content */}
+              <div className="space-y-8">
+                {/* Meta Description */}
+                <div className="bg-gray-50 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-8">
+                  <h2 className="text-2xl font-bold text-black mb-4 border-b-4 border-black pb-2">Course Overview</h2>
+                  <p className="text-black font-semibold leading-relaxed text-lg">{course.metaDescription}</p>
+                </div>
+
+                {/* Learning Outcomes */}
+                <div className="bg-yellow-50 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-8">
+                  <h2 className="text-2xl font-bold text-black mb-6 border-b-4 border-black pb-2">What You'll Learn</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {course.learningOutcomes.map((outcome, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <div className="bg-black text-yellow-400 w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">
+                          ✓
+                        </div>
+                        <span className="text-black font-semibold">{outcome}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Enroll Now */}
+                <div className="bg-black text-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6">
+                  <h3 className="text-xl font-bold mb-4">Enroll Now</h3>
+                  <div className="space-y-4">
+                    <button
+                      onClick={() => window.open("https://vybeschool.akamai.net.in/", "_blank")}
+                      className="w-full bg-yellow-400 text-black px-6 py-4 font-bold text-lg border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] rounded-lg hover:bg-yellow-500 transition-colors cursor-pointer"
+                    >
+                      START LEARNING NOW
+                    </button>
+                    <div className="text-center text-sm">
+                      <p className="mb-2">✓ Lifetime Access</p>
+                      <p className="mb-2">✓ Certificate of Completion</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* VybeMentors */}
+                <div className="bg-green-50 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6">
+                  <h3 className="text-lg font-bold text-black mb-4">VybeMentors</h3>
+                  <div className="space-y-4">
+                    {/* Vikas Chary */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-black">
+                        <img
+                          src="/maneesh-headshot.png"
+                          alt="Vikas Chary"
+                          className="w-full h-full object-cover"
+                          onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/placeholder-user.jpg" }}
+                        />
+                      </div>
+                      <div>
+                        <div className="font-bold text-black text-sm">VIKAS CHARY</div>
+                        <div className="text-xs text-gray-600 font-semibold">AI Educator & Mentor</div>
+                        <div className="text-xs text-gray-600">Expert Guidance for Learners</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Prerequisites */}
+                <div className="bg-blue-50 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg p-6">
+                  <h3 className="text-lg font-bold text-black mb-3">Prerequisites</h3>
+                  <p className="text-black font-semibold">{course.prerequisites}</p>
+                </div>
+              </div>
+            </div>
+          ) : (
+            // Other courses - Standard 3-column layout
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-8">
               {/* Meta Description */}
@@ -304,6 +532,7 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
               </div>
             </div>
           </div>
+          )}
         </div>
       </div>
 
