@@ -44,6 +44,17 @@ export default function AppliedAIPage() {
     },
     {
       id: 2,
+      title: "Mobile AI Mastery",
+      // Subtext: Learn AI Mastery with Mobile — No PC Needed
+      description:
+        "A Telugu course that shows you how to use AI tools right from your smartphone. Learn real-world AI tools through short, easy-to-follow mobile videos.",
+      tags: ["Mobile", "AI", "Tools", "Telugu"],
+      duration: "45 min",
+      category: "AI Tools",
+      image: "/AIMO1.jpg",
+    },
+    {
+      id: 3,
       title: "Base44: Complete Web Development Mastery",
       description: "Build and deploy full-stack web applications using the Base44 platform.",
       tags: ["Web Dev", "Base44", "No-Code", "Development"],
@@ -52,7 +63,7 @@ export default function AppliedAIPage() {
       image: "/bass44.avif",
     },
     {
-      id: 3,
+      id: 4,
       title: "Presentations with AI Mastery",
       description: "Create stunning, professional presentations in minutes with AI-powered tools.",
       tags: ["Presentations", "AI", "Design", "Creative"],
@@ -61,7 +72,7 @@ export default function AppliedAIPage() {
       image: "/presentation.png",
     },
     {
-      id: 4,
+      id: 5,
       title: "Vercel V0 Quick Start",
       description: "Build and deploy React components instantly with AI-powered Vercel V0.",
       tags: ["React", "Deployment", "AI", "Development"],
@@ -70,7 +81,7 @@ export default function AppliedAIPage() {
       image: "/v0.avif",
     },
     {
-      id: 5,
+      id: 6,
       title: "Lovable App Builder",
       description: "Create full-stack applications using natural language with Lovable.",
       tags: ["No-Code", "Full-Stack", "AI", "Development"],
@@ -79,7 +90,7 @@ export default function AppliedAIPage() {
       image: "/lovable.png",
     },
     {
-      id: 6,
+      id: 7,
       title: "Claude Prompt Mastery",
       description: "Advanced prompting techniques for better Claude AI responses.",
       tags: ["Prompting", "Claude", "Productivity", "AI Tools"],
@@ -88,7 +99,7 @@ export default function AppliedAIPage() {
       image: "/claude.webp",
     },
     {
-      id: 7,
+      id: 8,
       title: "Cursor AI Coding",
       description: "Boost coding productivity with AI-powered code completion.",
       tags: ["Coding", "AI", "IDE", "Development"],
@@ -97,7 +108,7 @@ export default function AppliedAIPage() {
       image: "/cursor.webp",
     },
     {
-      id: 8,
+      id: 9,
       title: "Midjourney Art Generation",
       description: "Create stunning artwork and images with Midjourney AI.",
       tags: ["Art", "Images", "Creative"],
@@ -106,7 +117,7 @@ export default function AppliedAIPage() {
       image: "/mj.svg",
     },
     {
-      id: 9,
+      id: 10,
       title: "GitHub Copilot Setup",
       description: "Configure and optimize GitHub Copilot for maximum efficiency.",
       tags: ["GitHub", "AI", "Coding", "Development"],
@@ -115,7 +126,7 @@ export default function AppliedAIPage() {
       image: "/ghc.png",
     },
     {
-      id: 10,
+      id: 11,
       title: "AI Tools API Integration",
       description: "Integrate ChatGPT into your applications with API calls.",
       tags: ["API", "ChatGPT", "Integration", "AI Tools"],
@@ -124,7 +135,7 @@ export default function AppliedAIPage() {
       image: "/chatgptapi.webp",
     },
     {
-      id: 11,
+      id: 12,
       title: "Notion AI Workflows",
       description: "Automate your productivity with Notion AI features.",
       tags: ["Notion", "Automation", "Workflow", "Productivity"],
