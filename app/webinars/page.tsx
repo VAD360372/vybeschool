@@ -121,7 +121,7 @@ export default function WebinarsPage() {
 
                 <div className="text-center mb-3">
                   <Link
-                    href="https://tally.so/r/3yKQRx"
+                    href="https://nexify.club/dp/6909e66cd60cb974b77b558d"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
