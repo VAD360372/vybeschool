@@ -465,6 +465,9 @@ export default function Page() {
             <div className="md:hidden">
               {/* Video Player - Mobile First */}
               <div className="mb-6">
+                <div className="mb-3 inline-block px-4 py-2 bg-blue-500 text-white font-black border-4 border-black shadow-[4px_4px_0_0_#000] rounded-lg">
+                  30k+ learners
+                </div>
                 <div
                   className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden rounded-lg"
                   style={{ backgroundColor: "#2C3E50" }}
@@ -495,6 +498,9 @@ export default function Page() {
                   SCHOOL
                 </h1>
                 <p className="text-xl font-black mb-6 text-black">LEARN AI IN YOUR LANGUAGE</p>
+                <div className="inline-block px-4 py-2 bg-yellow-400 text-black font-black border-4 border-black shadow-[4px_4px_0_0_#000] rounded-lg">
+                  30k+ learners
+                </div>
               </div>
 
               {/* Language Section */}
@@ -549,6 +555,9 @@ export default function Page() {
             <div className="hidden md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Video Player */}
               <div className="order-2 md:order-1">
+                <div className="mb-3 inline-block px-4 py-2 bg-blue-500 text-white font-black border-4 border-black shadow-[4px_4px_0_0_#000] rounded-lg">
+                  30k+ learners
+                </div>
                 <div
                   className="aspect-video border-4 border-black shadow-[8px_8px_0_0_#000] relative overflow-hidden rounded-lg"
                   style={{ backgroundColor: "#2C3E50" }}
@@ -582,6 +591,9 @@ export default function Page() {
                     SCHOOL
                   </h1>
                   <p className="text-xl md:text-2xl font-black mt-4 text-black">LEARN AI IN YOUR LANGUAGE</p>
+                  <div className="inline-block mt-3 px-4 py-2 bg-yellow-400 text-black font-black border-4 border-black shadow-[4px_4px_0_0_#000] rounded-lg">
+                    30k+ learners
+                  </div>
                 </div>
 
                 {/* Language Section */}
