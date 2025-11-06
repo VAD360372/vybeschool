@@ -591,9 +591,6 @@ export default function Page() {
                     SCHOOL
                   </h1>
                   <p className="text-xl md:text-2xl font-black mt-4 text-black">LEARN AI IN YOUR LANGUAGE</p>
-                  <div className="inline-block mt-3 px-4 py-2 bg-yellow-400 text-black font-black border-4 border-black shadow-[4px_4px_0_0_#000] rounded-lg">
-                    30k+ learners
-                  </div>
                 </div>
 
                 {/* Language Section */}
