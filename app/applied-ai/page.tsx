@@ -264,7 +264,7 @@ export default function AppliedAIPage() {
                         onClick={() => window.open((course as any).startHref ? (course as any).startHref : "https://vybeschool.akamai.net.in/", "_blank")}
                         className="bg-yellow-400 text-black px-4 py-2 font-bold text-sm border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg hover:bg-yellow-500 transition-colors cursor-pointer"
                       >
-                        Access for free!
+                        Soon Launching(FREE)!
                       </button>
                     ) : (
                       <button
