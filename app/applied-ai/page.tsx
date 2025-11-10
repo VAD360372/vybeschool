@@ -30,6 +30,16 @@ export default function AppliedAIPage() {
       color: "from-yellow-500 to-orange-500",
       startHref: "https://vybeschool.akamai.net.in/new-courses/2-ai-superstack-telugu",
     },
+    {
+      id: 3,
+      title: "ComfyUI Complete Guide in Telugu From Basics to Pro-Level AI Image Workflows",
+      subtitle: "Master ComfyUI In Telugu",
+      description:
+        "Learn ComfyUI in Telugu! Master AI image generation, workflows, and automation using ComfyUI — from setup to advanced node connections.",
+      image: "/cfu.png",
+      color: "from-purple-500 to-pink-500",
+      startHref: "https://youtu.be/KetGfjGr3-g?si=YznGgj8V5hawMVlT",
+    },
   ]
 
   const dynamites = [
@@ -249,17 +259,28 @@ export default function AppliedAIPage() {
                   <h4 className="text-base font-bold text-black mb-3">{course.subtitle}</h4>
 
                   <div className="flex flex-col gap-2 mt-auto">
-                    <button
-                      onClick={() => window.open((course as any).startHref ? (course as any).startHref : "https://vybeschool.akamai.net.in/", "_blank")}
-                      className="bg-blue-500 text-white px-4 py-2 font-bold text-sm border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg hover:bg-blue-600 transition-colors cursor-pointer"
-                    >
-                      START LEARNING
-                    </button>
-                    <Link href={(course as any).moreHref ? (course as any).moreHref : `/applied-ai/course/${course.id}`}>
-                      <button className="bg-green-500 text-white px-4 py-2 font-bold text-sm border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg hover:bg-green-600 transition-colors w-full">
-                        VIEW MORE
+                    {course.id === 3 ? (
+                      <button
+                        onClick={() => window.open((course as any).startHref ? (course as any).startHref : "https://vybeschool.akamai.net.in/", "_blank")}
+                        className="bg-yellow-400 text-black px-4 py-2 font-bold text-sm border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg hover:bg-yellow-500 transition-colors cursor-pointer"
+                      >
+                        Access for free!
                       </button>
-                    </Link>
+                    ) : (
+                      <button
+                        onClick={() => window.open((course as any).startHref ? (course as any).startHref : "https://vybeschool.akamai.net.in/", "_blank")}
+                        className="bg-blue-500 text-white px-4 py-2 font-bold text-sm border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg hover:bg-blue-600 transition-colors cursor-pointer"
+                      >
+                        START LEARNING
+                      </button>
+                    )}
+                    {course.id !== 3 && (
+                      <Link href={(course as any).moreHref ? (course as any).moreHref : `/applied-ai/course/${course.id}`}>
+                        <button className="bg-green-500 text-white px-4 py-2 font-bold text-sm border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-lg hover:bg-green-600 transition-colors w-full">
+                          VIEW MORE
+                        </button>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
