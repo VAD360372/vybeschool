@@ -1215,13 +1215,13 @@ export default function Page() {
               {/* Mission & Vision Image (replaced video) */}
               <div>
                 <div
-                  className="border-4 shadow-[8px_8px_0_0_#FFD700] rounded-lg overflow-hidden mb-4 max-w-md mx-auto"
+                  className="border-4 shadow-[8px_8px_0_0_#FFD700] rounded-lg overflow-hidden mb-4 max-w-md mx-auto aspect-square"
                   style={{ borderColor: "#FFD700", backgroundColor: "#fff" }}
                 >
                   <img
                     src="/GIT.png"
                     alt="VybeSchool Mission & Vision"
-                    className="w-full h-auto object-contain bg-white"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-black text-center" style={{ color: "#FFD700" }}>

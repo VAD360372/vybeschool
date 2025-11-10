@@ -34,41 +34,6 @@ export default function AISupport() {
         </div>
       </div>
 
-      {/* Video Card Section */}
-      <section className="px-4 md:px-6 py-12" style={{ backgroundColor: "#FFD700" }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2
-              className="text-3xl md:text-4xl font-black px-6 py-3 border-4 border-black shadow-[6px_6px_0_0_#000] inline-block mb-8"
-              style={{ backgroundColor: "#000", color: "white" }}
-            >
-              AI SUPPORT TEAM
-            </h2>
-          </div>
-          
-          {/* Video Container */}
-          <div className="max-w-4xl mx-auto">
-            <div
-              className="aspect-video border-4 border-black shadow-[12px_12px_0_0_#000] relative overflow-hidden rounded-lg"
-              style={{ backgroundColor: "#2C3E50" }}
-            >
-              <video
-                className="w-full h-full object-cover rounded-lg"
-                controls
-                playsInline
-                preload="metadata"
-                width="100%"
-                height="auto"
-                style={{ WebkitPlaysinline: true } as React.CSSProperties}
-              >
-                <source src="/what is AI-Support.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Content */}
       <section className="px-4 md:px-6 py-12" style={{ backgroundColor: "white" }}>
         <div className="max-w-4xl mx-auto text-center">

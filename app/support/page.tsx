@@ -3,18 +3,20 @@
 export default function SupportPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Video Section */}
+      {/* Image Section */}
       <section className="bg-yellow-400 py-16 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8">
             <div className="bg-black text-white px-8 py-4 text-2xl font-bold border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] inline-block">
               AI SUPPORT TEAM
             </div>
           </div>
-          <div className="bg-gray-800 border-8 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] aspect-video flex items-center justify-center rounded-lg">
-            <button className="bg-red-500 rounded-full w-16 h-16 flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
-              <div className="w-0 h-0 border-l-[12px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
-            </button>
+          <div className="border-8 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] aspect-video rounded-lg overflow-hidden">
+            <img
+              src="/GIT.png"
+              alt="AI Support Team"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
