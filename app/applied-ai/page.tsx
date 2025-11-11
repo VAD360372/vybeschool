@@ -38,7 +38,7 @@ export default function AppliedAIPage() {
         "Learn ComfyUI in Telugu! Master AI image generation, workflows, and automation using ComfyUI — from setup to advanced node connections.",
       image: "/cfu.png",
       color: "from-purple-500 to-pink-500",
-      startHref: "https://youtu.be/KetGfjGr3-g?si=YznGgj8V5hawMVlT",
+      startHref: "https://youtu.be/J1QDsdNS2ko?si=62SNRz1i0jaqow17",
     },
   ]
 
