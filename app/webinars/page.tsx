@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import AIBootcampPopup from "@/components/AIBootcampPopup"
 
 const programPhases = [
   {
@@ -105,12 +106,7 @@ const programPhases = [
 ]
 
 export default function WebinarsPage() {
-  const [showPopup, setShowPopup] = useState(false)
   const phaseRefs = useRef<(HTMLDivElement | null)[]>([])
-
-  useEffect(() => {
-    setShowPopup(true)
-  }, [])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -133,44 +129,7 @@ export default function WebinarsPage() {
 
   return (
     <main className="min-h-screen px-4 md:px-6 py-10 md:py-16" style={{ backgroundColor: "#F8F9FA" }}>
-      {showPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4">
-          <div className="relative bg-white border-4 border-black shadow-[10px_10px_0_0_#000] rounded-2xl max-w-2xl w-full p-6">
-            <button
-              onClick={() => setShowPopup(false)}
-              className="absolute top-3 right-3 w-10 h-10 rounded-full border-4 border-black bg-red-500 text-white font-black shadow-[3px_3px_0_0_#000] hover:shadow-[1px_1px_0_0_#000] transition-all"
-            >
-              ✕
-            </button>
-            <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
-              <div className="relative w-32 h-32 border-4 border-black rounded-xl overflow-hidden shadow-[6px_6px_0_0_#000] flex-shrink-0 bg-yellow-100">
-                <Image src="/aiss.png" alt="AI SuperStack Hands-On Program" fill className="object-cover" />
-              </div>
-              <div className="text-center md:text-left">
-                <h2 className="text-xl md:text-2xl font-black text-black mb-2">
-                  AI SuperStack Hands-On Program
-                </h2>
-                <p className="text-sm md:text-base font-bold text-black mb-3 leading-relaxed">
-                  In just 14 days, go from AI-curious to AI-confident! Build real AI-powered projects across Foundations,
-                  Builder Track, and Automation & Monetization — all with 100% money-back guarantee.
-                </p>
-                <Link
-                  href="https://nexify.club/dp/691031a558cce7577942316f"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button
-                    className="px-6 py-2 md:py-3 text-sm md:text-base font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
-                    style={{ backgroundColor: "#1D4ED8", color: "white" }}
-                  >
-                    🎟 Join Now
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <AIBootcampPopup paymentUrl="https://nexify.club/dp/68c020ea3ea1a10319f61326" />
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h1

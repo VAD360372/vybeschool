@@ -31,6 +31,8 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
       <body className="font-sans">
         <GlobalNavigation />
+        {/* Spacer to offset fixed navbar height */}
+        <div className="h-20 md:h-24"></div>
         {children}
       </body>
     </html>

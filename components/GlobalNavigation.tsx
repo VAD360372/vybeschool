@@ -1,20 +1,43 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 
 export default function GlobalNavigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isHidden, setIsHidden] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
+  // Smart hide/show on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY
+      // Hide when scrolling down, show when scrolling up
+      if (currentY > lastScrollY && currentY > 10) {
+        setIsHidden(true)
+      } else {
+        setIsHidden(false)
+      }
+      setLastScrollY(currentY)
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [lastScrollY])
+
   return (
     <>
       {/* Navigation */}
-      <nav className="flex items-center justify-between p-4 md:p-6" style={{ backgroundColor: "#FFD700" }}>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 md:p-6 transform transition-transform duration-200 ${
+          isHidden ? "-translate-y-full" : "translate-y-0"
+        } shadow-md backdrop-blur-md bg-opacity-90`}
+        style={{ backgroundColor: "#FFD700" }}
+      >
         <div className="flex items-center gap-6 md:gap-8">
           {/* Logo - Same in both desktop and mobile */}
           <Link href="/" className="flex items-center">

@@ -1,181 +1,85 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, MouseEvent } from "react"
 import Link from "next/link"
 
-export default function AIBootcampPopup() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  })
+type AIBootcampPopupProps = {
+  paymentUrl?: string
+}
 
-  // Show popup after 2 seconds
+export default function AIBootcampPopup({ paymentUrl = "#" }: AIBootcampPopupProps) {
+  const [isVisible, setIsVisible] = useState(false)
+
+  // Auto-show shortly after entry
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true)
-    }, 2000)
-
+    }, 600)
     return () => clearTimeout(timer)
   }, [])
 
-  // Countdown timer logic
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      // Set target date to September 28, 2025 at 00:00:00
-      const targetDate = new Date("2025-09-28T00:00:00").getTime()
-      const now = new Date().getTime()
-      const difference = targetDate - now
+  const handleClose = () => setIsVisible(false)
 
-      if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24))
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000)
-
-        setTimeLeft({ days, hours, minutes, seconds })
-      } else {
-        // Countdown has reached zero
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-      }
-    }
-
-    // Calculate immediately when component mounts
-    calculateTimeLeft()
-    
-    // Set up interval to update every second
-    const interval = setInterval(calculateTimeLeft, 1000)
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval)
-  }, [])
-
-  const handleClose = () => {
-    setIsVisible(false)
-  }
+  const onOverlayClick = () => setIsVisible(false)
+  const onCardClick = (e: MouseEvent<HTMLDivElement>) => e.stopPropagation()
 
   if (!isVisible) return null
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 animate-fadeIn">
-      <div className="bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] rounded-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
-        {/* Close Button */}
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
+      onClick={onOverlayClick}
+    >
+      <div
+        className="relative w-full max-w-lg bg-white border-4 border-black rounded-2xl shadow-[12px_12px_0_0_#000] overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+        onClick={onCardClick}
+      >
+        {/* Close */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 w-8 h-8 bg-red-500 text-white font-black border-2 border-black rounded-full hover:bg-red-600 transition-colors flex items-center justify-center text-lg"
+          aria-label="Close"
+          className="absolute top-3 right-3 w-9 h-9 rounded-full border-2 border-black bg-red-500 text-white font-black hover:bg-red-600 transition-colors"
         >
           ×
         </button>
 
-        <div className="p-6 pt-12">
-          {/* Headline with Countdown */}
-          <div className="text-center mb-6">
-            <h2 className="text-xl md:text-2xl font-black text-black mb-4">
-              AI Engineering Bootcamp starts on September 28
-            </h2>
-            <div className={`border-2 border-black rounded-lg p-4 mb-4 ${
-              timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 
-                ? 'bg-red-100' 
-                : 'bg-red-500'
-            }`}>
-              {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 ? (
-                <div className="text-center">
-                  <div className="text-2xl font-black text-red-600 mb-2">BOOTCAMP STARTED!</div>
-                  <div className="text-sm font-bold text-black">Join now to catch up!</div>
-                </div>
-              ) : (
-                <div className="grid grid-cols-4 gap-2 text-center">
-                  <div className="bg-white border-2 border-black rounded p-2 transition-all duration-300 hover:scale-105">
-                    <div className="text-2xl font-black text-black animate-pulse">{String(timeLeft.days).padStart(2, '0')}</div>
-                    <div className="text-xs font-bold text-gray-600">DAYS</div>
-                  </div>
-                  <div className="bg-white border-2 border-black rounded p-2 transition-all duration-300 hover:scale-105">
-                    <div className="text-2xl font-black text-black animate-pulse">{String(timeLeft.hours).padStart(2, '0')}</div>
-                    <div className="text-xs font-bold text-gray-600">HOURS</div>
-                  </div>
-                  <div className="bg-white border-2 border-black rounded p-2 transition-all duration-300 hover:scale-105">
-                    <div className="text-2xl font-black text-black animate-pulse">{String(timeLeft.minutes).padStart(2, '0')}</div>
-                    <div className="text-xs font-bold text-gray-600">MIN</div>
-                  </div>
-                  <div className="bg-white border-2 border-black rounded p-2 transition-all duration-300 hover:scale-105">
-                    <div className="text-2xl font-black text-black animate-pulse">{String(timeLeft.seconds).padStart(2, '0')}</div>
-                    <div className="text-xs font-bold text-gray-600">SEC</div>
-                  </div>
-                </div>
-              )}
+        <div className="p-6 md:p-8">
+          {/* Header */}
+          <div className="text-center mb-4">
+            <div className="text-2xl md:text-3xl font-black text-black">AI SuperStack Program</div>
+            <div className="mt-1 text-base md:text-lg font-bold text-black">Learn → Build → Earn with AI in 14 Days!</div>
+            <div className="mt-3 text-lg md:text-xl font-black">
+              <span className="text-black">Only ₹1499 | </span>
+              <span className="font-black" style={{ color: "#16a34a" }}>
+                100% Money-Back Guarantee
+              </span>
             </div>
           </div>
 
-          {/* Mentor Details */}
-          <div className="bg-yellow-100 border-2 border-black rounded-lg p-4 mb-6">
-            <div className="flex items-center gap-4">
-              <img
-                src="/uday.JPG"
-                alt="Uday - AI Engineer Mentor"
-                className="w-16 h-16 rounded-full border-2 border-black object-cover"
-              />
-              <div>
-                <h3 className="text-black font-black text-lg">Meet Your Mentor</h3>
-                <p className="text-black font-bold text-sm">Uday - AI Engineer</p>
-                <p className="text-black font-bold text-xs">Expert in Python, LLMs & AI Development</p>
-              </div>
+          {/* Phases */}
+          <div className="space-y-2 text-black font-bold mb-5">
+            <div>📘 Phase 1: Understand AI, ChatGPT & Tools</div>
+            <div>💻 Phase 2: Design → Code → Deploy → Voice AI</div>
+            <div>⚙️ Phase 3: Automate & Monetize Projects</div>
+          </div>
+
+          <div className="bg-yellow-100 border-2 border-black rounded-lg p-3 text-center mb-6">
+            <div className="text-black font-black">
+              Go from AI beginner to AI builder — fully hands-on in just 2 weeks!
             </div>
           </div>
 
-          {/* 4-line intro text */}
-          <div className="space-y-2 mb-6">
-            <p className="text-black font-bold text-sm">Become an AI Engineer with real, job-ready skills.</p>
-            <p className="text-black font-bold text-sm">Master Python, NLP, LLMs, and Vector Databases.</p>
-            <p className="text-black font-bold text-sm">Build real-world projects with OpenAI, LangChain, Pinecone, and Streamlit.</p>
-            <p className="text-black font-bold text-sm">Get live mentorship and step into high-demand AI roles.</p>
+          {/* CTA */}
+          <div className="text-center">
+            <Link href={paymentUrl} target="_blank" rel="noopener noreferrer">
+              <button
+                className="inline-block px-6 py-3 rounded-lg font-semibold cursor-pointer border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all"
+                style={{ background: "#007bff", color: "#fff" }}
+              >
+                Join Now — Risk-Free
+              </button>
+            </Link>
           </div>
-
-          {/* Pricing section */}
-          <div className="bg-blue-100 border-2 border-black rounded-lg p-4 mb-6">
-            <div className="text-center">
-              <p className="text-black font-black text-lg mb-2">
-                <span className="text-2xl text-gray-500 line-through">₹12,000</span>
-                <span className="text-2xl text-black ml-2">₹5,000</span>
-              </p>
-              <p className="text-green-600 font-bold text-sm mb-2">
-                Use code: <span className="bg-yellow-200 px-2 py-1 rounded border border-black font-black">VYBE</span> to get ₹7,000 off
-              </p>
-              <p className="text-black font-bold text-sm">
-                (One-time, 45 days, Live Mentorship, 4+ Projects)
-              </p>
-            </div>
-          </div>
-
-          {/* Highlight box with 5 bullet points */}
-          <div className="bg-green-100 border-2 border-black rounded-lg p-4 mb-6">
-            <ul className="space-y-2 text-sm font-bold text-black">
-              <li>• Become an AI Engineer in just 45 days</li>
-              <li>• Hands-on projects & real workflows</li>
-              <li>• Live mentorship & expert guidance</li>
-              <li>• 95% less pricing than market rates</li>
-              <li>• Limited seats – Don't miss out!</li>
-            </ul>
-          </div>
-
-          {/* Bold text line */}
-          <div className="text-center mb-6">
-            <p className="text-black font-black text-lg">
-              Register now and get a discount!
-            </p>
-          </div>
-
-          {/* Register Now Button */}
-          <Link
-            href="https://nexify.club/dp/68c020ea3ea1a10319f61326"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="w-full bg-green-500 text-white px-6 py-4 font-black text-lg border-4 border-black shadow-[6px_6px_0_0_#000] rounded-xl hover:shadow-[3px_3px_0_0_#000] transition-all hover:bg-green-600">
-              REGISTER NOW →
-            </button>
-          </Link>
         </div>
       </div>
     </div>
