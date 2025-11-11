@@ -428,7 +428,7 @@ export default function Page() {
 
   return (
     <>
-      <AIBootcampPopup paymentUrl="https://nexify.club/dp/68c020ea3ea1a10319f61326" />
+      <AIBootcampPopup paymentUrl="https://nexify.club/dp/691031a558cce7577942316f" />
       <style jsx global>{`
         .scroll-section {
           opacity: 0;

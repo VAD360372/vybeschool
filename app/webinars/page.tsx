@@ -129,7 +129,7 @@ export default function WebinarsPage() {
 
   return (
     <main className="min-h-screen px-4 md:px-6 py-10 md:py-16" style={{ backgroundColor: "#F8F9FA" }}>
-      <AIBootcampPopup paymentUrl="https://nexify.club/dp/68c020ea3ea1a10319f61326" />
+      <AIBootcampPopup paymentUrl="https://nexify.club/dp/691031a558cce7577942316f" />
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h1
