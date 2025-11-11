@@ -180,7 +180,7 @@ export default function WebinarsPage() {
             WEBINARS
           </h1>
           <p className="mt-6 text-base md:text-lg font-bold text-black max-w-3xl mx-auto leading-relaxed">
-            Master AI from scratch in Telugu.
+            Master AI from scratch in Telugu
           </p>
         </div>
 
