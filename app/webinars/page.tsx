@@ -1,153 +1,320 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
+const programPhases = [
+  {
+    id: 1,
+    title: "Phase 1: AI Foundations (Days 1–5)",
+    theme: "Understand AI like never before — in simple Telugu.",
+    accent: "#4AA3FF",
+    gradient: "from-blue-50 to-blue-100",
+    days: [
+      {
+        label: "Day 1",
+        topic: "AI in India today",
+        outcome: "Demystify AI, Generative AI, and Agents — see how they shape opportunities around us.",
+      },
+      {
+        label: "Day 2",
+        topic: "ChatGPT, Gemini, Claude, Grok, Perplexity",
+        outcome: "Compare the top assistants and match each tool to the right workflow.",
+      },
+      {
+        label: "Day 3",
+        topic: "Automations, Agents & MCPs",
+        outcome: "Learn the frameworks that power modern AI systems and when to use each.",
+      },
+      {
+        label: "Day 4",
+        topic: "Hands-on with AI toolset",
+        outcome: "Explore Genspark, Grok, GitHub Copilot, and Gamma for real-world productivity.",
+      },
+      {
+        label: "Day 5",
+        topic: "AI for content growth",
+        outcome: "Discover how we scaled a YouTube channel from 0 to monetization using AI.",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Phase 2: Builder Track (Days 6–10)",
+    theme: "From Design → Code → Deploy → Voice AI.",
+    accent: "#FFB020",
+    gradient: "from-yellow-100 via-orange-100 to-yellow-200",
+    days: [
+      {
+        label: "Day 6",
+        topic: "Design with AI",
+        outcome: "Prototype beautiful websites using Relume, CopyUI, and Uizard in minutes.",
+      },
+      {
+        label: "Day 7",
+        topic: "Ship production-grade UI",
+        outcome: "Convert designs to React + Tailwind using Lovable and V0.",
+      },
+      {
+        label: "Day 8",
+        topic: "AI-assisted coding",
+        outcome: "Use Cursor AI to build features faster with intelligent pair programming.",
+      },
+      {
+        label: "Day 9",
+        topic: "Versioning & deployments",
+        outcome: "Push to GitHub, automate with best practices, and go live on Vercel.",
+      },
+      {
+        label: "Day 10",
+        topic: "Voice AI experiences",
+        outcome: "Integrate ElevenLabs + Vapi to make your project talk to users.",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Phase 3: Automate & Monetize (Days 11–14)",
+    theme: "Build automations that work — and earn.",
+    accent: "#22C55E",
+    gradient: "from-green-100 to-green-200",
+    days: [
+      {
+        label: "Day 11",
+        topic: "n8n automation fundamentals",
+        outcome: "Master triggers, data flows, filters, and webhooks to orchestrate tasks.",
+      },
+      {
+        label: "Day 12",
+        topic: "APIs + ChatGPT workflows",
+        outcome: "Wire ChatGPT with Gmail, Telegram, Google Sheets, and custom APIs.",
+      },
+      {
+        label: "Day 13",
+        topic: "Productize AI solutions",
+        outcome: "Build lead generators, chatbots, and CRM automations tailored to clients.",
+      },
+      {
+        label: "Day 14",
+        topic: "Deploy & monetize",
+        outcome: "Package, price, and pitch your automation stack to start earning.",
+      },
+    ],
+  },
+]
+
 export default function WebinarsPage() {
-  const [showDetails, setShowDetails] = useState(false)
+  const [showPopup, setShowPopup] = useState(false)
+  const phaseRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  useEffect(() => {
+    setShowPopup(true)
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("timeline-phase-visible")
+          }
+        })
+      },
+      { threshold: 0.3 },
+    )
+
+    phaseRefs.current.forEach((phase) => {
+      if (phase) observer.observe(phase)
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <main className="min-h-screen px-4 md:px-6 py-10 md:py-16" style={{ backgroundColor: "#F8F9FA" }}>
+      {showPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4">
+          <div className="relative bg-white border-4 border-black shadow-[10px_10px_0_0_#000] rounded-2xl max-w-2xl w-full p-6">
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-3 right-3 w-10 h-10 rounded-full border-4 border-black bg-red-500 text-white font-black shadow-[3px_3px_0_0_#000] hover:shadow-[1px_1px_0_0_#000] transition-all"
+            >
+              ✕
+            </button>
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
+              <div className="relative w-32 h-32 border-4 border-black rounded-xl overflow-hidden shadow-[6px_6px_0_0_#000] flex-shrink-0 bg-yellow-100">
+                <Image src="/aiss.png" alt="AI SuperStack Hands-On Program" fill className="object-cover" />
+              </div>
+              <div className="text-center md:text-left">
+                <h2 className="text-xl md:text-2xl font-black text-black mb-2">
+                  AI SuperStack Hands-On Program
+                </h2>
+                <p className="text-sm md:text-base font-bold text-black mb-3 leading-relaxed">
+                  In just 14 days, go from AI-curious to AI-confident! Build real AI-powered projects across Foundations,
+                  Builder Track, and Automation & Monetization — all with 100% money-back guarantee.
+                </p>
+                <Link
+                  href="https://nexify.club/dp/691031a558cce7577942316f"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button
+                    className="px-6 py-2 md:py-3 text-sm md:text-base font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
+                    style={{ backgroundColor: "#1D4ED8", color: "white" }}
+                  >
+                    🎟 Join Now
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-10">
+        <div className="text-center mb-12">
           <h1
             className="text-3xl md:text-5xl font-black px-6 py-3 border-4 border-black shadow-[6px_6px_0_0_#000] inline-block"
             style={{ backgroundColor: "#FFD700", color: "#000" }}
           >
             WEBINARS
           </h1>
+          <p className="mt-6 text-base md:text-lg font-bold text-black max-w-3xl mx-auto leading-relaxed">
+            Master AI from scratch in Telugu.
+          </p>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-          {/* Webinar Card - Left Column */}
-          <div className="w-full flex justify-start">
-            <div
-              className="border-4 border-black shadow-[8px_8px_0_0_#000] rounded-xl bg-white overflow-hidden transition-all hover:shadow-[12px_12px_0_0_#000] max-w-sm w-full"
-            >
-              <div className="relative w-full" style={{ paddingBottom: "140%" }}>
-                <Image
-                  src="/webinar poster.png"
-                  alt="AI Starter Program Telugu"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="pt-2 px-3 pb-3">
-                <h2 className="text-lg md:text-xl font-black text-black mb-2 text-center -mt-1">
-                  AI Starter Program Telugu
-                </h2>
-                {!showDetails && (
-                  <button
-                    className="w-full px-4 py-2 text-sm font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg -mt-1"
-                    style={{ backgroundColor: "#10B981", color: "white" }}
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      setShowDetails(true)
-                    }}
-                  >
-                    JOIN WEBINAR →
-                  </button>
-                )}
-              </div>
+        {/* Hero Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center mb-16">
+          <div className="border-4 border-black shadow-[10px_10px_0_0_#000] rounded-2xl bg-white overflow-hidden">
+            <div className="relative w-full" style={{ paddingBottom: "62%" }}>
+              <Image src="/aiss.png" alt="AI SuperStack Hands-On Program" fill className="object-cover" priority />
             </div>
           </div>
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-black text-black leading-tight">
+              AI SuperStack Hands-On Program — Learn, Build & Earn with AI in 14 Days
+            </h2>
+            <p className="text-sm md:text-base font-semibold text-black leading-relaxed">
+              Every session is hands-on 
+              you’ll explore, build, and launch projects that make AI work for you.
+            </p>
+            <div className="bg-black text-white border-4 border-black rounded-xl shadow-[8px_8px_0_0_#000] p-4 space-y-2">
+              <p className="text-sm md:text-base font-bold leading-relaxed">
+                By Day 14, you’ll launch your own AI-powered project — website, voice agent, and a monetizable automation stack.
+              </p>
+              <p className="text-sm font-bold uppercase tracking-wide text-yellow-300">No coding required. Curiosity mandatory.</p>
+            </div>
+            <div className="bg-gray-100 border-4 border-black rounded-xl shadow-[6px_6px_0_0_#000] p-4">
+              <p className="text-sm md:text-base font-bold text-black leading-relaxed">
+                💰 100% Money-Back Guarantee — build and deploy your own website by the end, or get a full refund. No questions
+                asked.
+              </p>
+            </div>
+            <Link
+              href="https://nexify.club/dp/691031a558cce7577942316f"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                className="px-6 py-3 text-base md:text-lg font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
+                style={{ backgroundColor: "#1D4ED8", color: "white" }}
+              >
+                🎟 Join the AI SuperStack Today — Learn. Build. Earn.
+              </button>
+            </Link>
+          </div>
+        </div>
 
-          {/* Detailed Content - Right Column */}
-          {showDetails && (
-            <div className="w-full">
-              <div className="p-4 border-4 border-black shadow-[8px_8px_0_0_#000] rounded-xl bg-white h-full">
-                <h2 className="text-lg md:text-xl font-black text-black mb-2">
-                  Now, for the first time ever, we're going behind the scenes to show you how it's all done.
-                </h2>
-                <p className="text-sm font-bold text-black mb-4">
-                  This 3-Day Experience isn't just about "learning AI." It's about understanding how real founders build, scale, and monetize AI in the modern world.
-                </p>
-
-                {/* Day 1 */}
-                <div className="mb-3 p-3 border-2 border-black rounded-lg bg-yellow-50">
-                  <h3 className="text-base font-black text-black mb-2">
-                    Day 1: Inside Vybe — Meet the Founders
-                  </h3>
-                  <p className="text-xs text-black font-bold leading-relaxed">
-                    Interact directly with Maneesh & Anjudeep, the founders of VybeSchool and LumiAI. 
-                    Get a transparent look at how our team works, what tools we use daily, and how AI runs everything we build.
-                  </p>
-                </div>
-
-                {/* Day 2 */}
-                <div className="mb-3 p-3 border-2 border-black rounded-lg bg-blue-50">
-                  <h3 className="text-base font-black text-black mb-2">
-                    Day 2: AI Deep Dive — Solve, Build, Integrate
-                  </h3>
-                  <p className="text-xs text-black font-bold leading-relaxed">
-                    Bring your real questions business, student, or creator-related and we'll guide you 1:1 on how to actually use AI in your work or studies. 
-                    <br />
-                    From automating tasks to building your own AI workflows.
-                  </p>
-                </div>
-
-                {/* Day 3 */}
-                <div className="mb-3 p-3 border-2 border-black rounded-lg bg-green-50">
-                  <h3 className="text-base font-black text-black mb-2">
-                    Day 3: Monetize AI — From Skills to Clients
-                  </h3>
-                  <p className="text-xs text-black font-bold mb-2 leading-relaxed">
-                    Join our LumiAI Services team lead, Santosh, as we break down the entire client journey:
-                  </p>
-                  <ul className="text-xs text-black font-bold list-none space-y-1.5 ml-0 leading-relaxed">
-                    <li>• How we find clients</li>
-                    <li>• How we quote & close deals</li>
-                    <li>• What tools we use to deliver</li>
-                    <li>• And how you can start doing it too</li>
-                  </ul>
-                </div>
-
-                <div className="mb-3 p-3 border-2 border-black rounded-lg bg-gray-100">
-                  <p className="text-xs font-black text-black">
-                    This is not a webinar. It's an inside look at India's growing AI startup culture taught by the ones building it. So if you've ever wondered "Where do I even start with AI?" This is your start.
-                  </p>
-                </div>
-
-                <div className="mb-4 text-center">
-                  <p className="text-sm font-black text-black mb-1">
-                    Join the Founders Live Interact. Learn. Grow.
-                  </p>
-                  <p className="text-xs font-bold text-black">
-                    💗 Founders of VybeSchool: Maneesh Bommakanti & Anjudeep Veerla
-                  </p>
-                </div>
-
-                <div className="text-center mb-3">
-                  <Link
-                    href="https://nexify.club/dp/6909e66cd60cb974b77b558d"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <button
-                      className="px-6 py-3 text-base font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
-                      style={{ backgroundColor: "#10B981", color: "white" }}
+        {/* Timeline Animation */}
+        <section className="relative mb-20">
+          <div className="hidden lg:block absolute left-4 top-0 bottom-0 border-l-4 border-black"></div>
+          <div className="space-y-10">
+            {programPhases.map((phase, index) => (
+              <div
+                key={phase.id}
+                ref={(el) => {
+                  phaseRefs.current[index] = el
+                }}
+                className={`timeline-phase rounded-2xl border-4 border-black shadow-[10px_10px_0_0_#000] overflow-hidden bg-white`}
+              >
+                <div
+                  className={`px-6 py-5 border-b-4 border-black bg-gradient-to-r ${phase.gradient}`}
+                  style={{ borderColor: phase.accent }}
+                >
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                    <h3 className="text-xl md:text-2xl font-black text-black">{phase.title}</h3>
+                    <span
+                      className="inline-block px-4 py-2 text-xs md:text-sm font-black border-4 border-black rounded-lg shadow-[4px_4px_0_0_#000]"
+                      style={{ backgroundColor: phase.accent, color: "#111111" }}
                     >
-                      REGISTER HERE →
-                    </button>
-                  </Link>
+                      {phase.theme}
+                    </span>
+                  </div>
                 </div>
-
-                <div className="text-center">
-                  <button
-                    onClick={() => setShowDetails(false)}
-                    className="px-4 py-2 text-sm font-black border-4 border-black shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] transition-all rounded-lg"
-                    style={{ backgroundColor: "#000", color: "#FFD700" }}
-                  >
-                    Hide Details
-                  </button>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 px-6 py-6 bg-white">
+                  {phase.days.map((day) => (
+                    <div
+                      key={`${phase.id}-${day.label}`}
+                      className="timeline-card border-4 border-black rounded-xl shadow-[6px_6px_0_0_#000] bg-gray-50 p-4 space-y-2"
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="px-3 py-1 text-xs font-black border-2 border-black rounded-md bg-white">{day.label}</span>
+                        <span className="text-xs font-bold text-gray-600 uppercase tracking-wide">{phase.theme.split(" ")[0]}</span>
+                      </div>
+                      <h4 className="text-sm md:text-base font-black text-black">{day.topic}</h4>
+                      <p className="text-xs md:text-sm font-semibold text-black leading-relaxed">{day.outcome}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-          )}
-        </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Guarantee & CTA */}
+        <section className="mb-12">
+          <div className="border-4 border-black rounded-2xl shadow-[10px_10px_0_0_#000] bg-black text-white p-6 md:p-8 space-y-4 text-center">
+            <h3 className="text-2xl md:text-3xl font-black">No Theory. No Fluff. Just Hands-On AI.</h3>
+            <p className="text-sm md:text-base font-bold max-w-3xl mx-auto leading-relaxed">
+              Build a live website, voice agent, and automations that deliver real results.<br /> 
+              If you don’t launch, you don’t pay —
+              we refund 100%.
+            </p>
+            <Link
+              href="https://nexify.club/dp/691031a558cce7577942316f"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                className="px-6 py-3 text-base md:text-lg font-black border-4 border-white shadow-[6px_6px_0_0_rgba(255,255,255,1)] hover:shadow-[3px_3px_0_0_rgba(255,255,255,1)] transition-all rounded-lg"
+                style={{ backgroundColor: "#FFD700", color: "#111" }}
+              >
+                Join the 14-Day Program →
+              </button>
+            </Link>
+          </div>
+        </section>
       </div>
+
+      <style jsx global>{`
+        .timeline-phase {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .timeline-phase-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .timeline-card {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .timeline-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 8px 8px 0 0 #111111;
+        }
+      `}</style>
     </main>
   )
 }
