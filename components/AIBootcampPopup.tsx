@@ -69,6 +69,23 @@ export default function AIBootcampPopup({ paymentUrl = "#" }: AIBootcampPopupPro
             </div>
           </div>
 
+          <div className="mb-6">
+            <div className="relative overflow-hidden border-4 border-black rounded-xl shadow-[10px_10px_0_0_#000]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#facc15,_transparent_70%)] opacity-80"></div>
+              <div className="relative z-10 bg-red-500 text-white text-center px-5 py-6 space-y-2">
+                <div className="text-2xl md:text-3xl font-extrabold tracking-wide uppercase drop-shadow-md">
+                  Win ₹5000 For The Best Build!
+                </div>
+                <p className="text-sm md:text-base font-black leading-relaxed">
+                  Launch your AI website during the cohort, send us your live deployment, and we&apos;ll review every project.
+                </p>
+                <p className="text-xs md:text-sm font-bold text-yellow-200 uppercase tracking-wide">
+                  The most impressive ship takes home ₹5000. Submit your link + walkthrough on completion to enter.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* CTA */}
           <div className="text-center">
             <Link href={paymentUrl} target="_blank" rel="noopener noreferrer">
