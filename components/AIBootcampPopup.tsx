@@ -31,7 +31,7 @@ export default function AIBootcampPopup({ paymentUrl = "#" }: AIBootcampPopupPro
       onClick={onOverlayClick}
     >
       <div
-        className="relative w-full max-w-lg bg-white border-4 border-black rounded-2xl shadow-[12px_12px_0_0_#000] overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+        className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl bg-white border-4 border-black rounded-2xl shadow-[12px_12px_0_0_#000] animate-in fade-in zoom-in-95 duration-200 max-h-[calc(100vh-4rem)] sm:max-h-[calc(100vh-5rem)] overflow-y-auto"
         onClick={onCardClick}
       >
         {/* Close */}
@@ -43,12 +43,12 @@ export default function AIBootcampPopup({ paymentUrl = "#" }: AIBootcampPopupPro
           ×
         </button>
 
-        <div className="p-6 md:p-8">
+        <div className="p-4 md:p-8">
           {/* Header */}
-          <div className="text-center mb-4">
-            <div className="text-2xl md:text-3xl font-black text-black">AI SuperStack Program</div>
-            <div className="mt-1 text-base md:text-lg font-bold text-black">Learn → Build → Earn with AI in 14 Days!</div>
-            <div className="mt-3 text-lg md:text-xl font-black">
+          <div className="text-center mb-5 space-y-2">
+            <div className="text-xl md:text-3xl font-black text-black">AI SuperStack Program</div>
+            <div className="text-sm md:text-lg font-bold text-black">Learn → Build → Earn with AI in 14 Days!</div>
+            <div className="pt-2 text-base md:text-xl font-black">
               <span className="text-black">Only ₹1499 | </span>
               <span className="font-black" style={{ color: "#16a34a" }}>
                 100% Money-Back Guarantee
@@ -57,14 +57,14 @@ export default function AIBootcampPopup({ paymentUrl = "#" }: AIBootcampPopupPro
           </div>
 
           {/* Phases */}
-          <div className="space-y-2 text-black font-bold mb-5">
+          <div className="space-y-2 text-black font-bold mb-5 text-sm md:text-base">
             <div>📘 Phase 1: Understand AI, ChatGPT & Tools</div>
             <div>💻 Phase 2: Design → Code → Deploy → Voice AI</div>
             <div>⚙️ Phase 3: Automate & Monetize Projects</div>
           </div>
 
           <div className="bg-yellow-100 border-2 border-black rounded-lg p-3 text-center mb-6">
-            <div className="text-black font-black">
+            <div className="text-black font-black text-sm md:text-base">
               Go from AI beginner to AI builder — fully hands-on in just 2 weeks!
             </div>
           </div>
@@ -72,15 +72,15 @@ export default function AIBootcampPopup({ paymentUrl = "#" }: AIBootcampPopupPro
           <div className="mb-6">
             <div className="relative overflow-hidden border-4 border-black rounded-xl shadow-[10px_10px_0_0_#000]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#facc15,_transparent_70%)] opacity-80"></div>
-              <div className="relative z-10 bg-red-500 text-white text-center px-5 py-6 space-y-2">
-                <div className="text-2xl md:text-3xl font-extrabold tracking-wide uppercase drop-shadow-md">
-                  Win ₹5000 For The Best Build!
+              <div className="relative z-10 bg-red-500 text-white text-center px-4 py-5 space-y-2">
+                <div className="text-lg md:text-3xl font-extrabold tracking-wide uppercase drop-shadow-md">
+                  🏆 Win ₹5,000 for the Best AI Build!
                 </div>
-                <p className="text-sm md:text-base font-black leading-relaxed">
-                  Launch your AI website during the cohort, send us your live deployment, and we&apos;ll review every project.
+                <p className="text-xs md:text-base font-black leading-relaxed">
+                  Launch your AI site during the cohort and submit your live link + short walkthrough before it ends.
                 </p>
                 <p className="text-xs md:text-sm font-bold text-yellow-200 uppercase tracking-wide">
-                  The most impressive ship takes home ₹5000. Submit your link + walkthrough on completion to enter.
+                  The most impressive project takes home ₹5,000! Build. Deploy. Win. 🚀
                 </p>
               </div>
             </div>
