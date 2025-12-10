@@ -13,7 +13,6 @@ import {
   Linkedin,
   MessageCircle,
 } from "lucide-react"
-import AIBootcampPopup from "@/components/AIBootcampPopup"
 
 export default function Page() {
   const [activeLanguage, setActiveLanguage] = useState("telugu")
@@ -428,7 +427,6 @@ export default function Page() {
 
   return (
     <>
-      <AIBootcampPopup paymentUrl="https://nexify.club/dp/691031a558cce7577942316f" />
       <style jsx global>{`
         .scroll-section {
           opacity: 0;

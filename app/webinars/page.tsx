@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import AIBootcampPopup from "@/components/AIBootcampPopup"
 
 const programPhases = [
   {
@@ -129,7 +128,6 @@ export default function WebinarsPage() {
 
   return (
     <main className="min-h-screen px-4 md:px-6 py-10 md:py-16" style={{ backgroundColor: "#F8F9FA" }}>
-      <AIBootcampPopup paymentUrl="https://nexify.club/dp/691031a558cce7577942316f" />
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h1
@@ -158,44 +156,6 @@ export default function WebinarsPage() {
               Every session is hands-on 
               you’ll explore, build, and launch projects that make AI work for you.
             </p>
-            <div className="relative overflow-hidden border-4 border-black rounded-2xl shadow-[12px_12px_0_0_#000]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.25),_transparent_65%)]"></div>
-              <div className="relative bg-red-500 text-white px-5 py-6 text-center space-y-2">
-                <div className="text-2xl md:text-3xl font-black uppercase tracking-wide drop-shadow-md">
-                  ₹5000 Cash Reward Challenge
-                </div>
-                <p className="text-sm md:text-base font-black leading-relaxed">
-                  Launch your AI project during the cohort, share your live website with us, and get detailed feedback from the mentors.
-                </p>
-                <p className="text-xs md:text-sm font-bold text-yellow-200 uppercase tracking-widest">
-                  Best deployed build wins ₹5000. Submit your link + walkthrough on graduation day to enter.
-                </p>
-              </div>
-            </div>
-            <div className="bg-black text-white border-4 border-black rounded-xl shadow-[8px_8px_0_0_#000] p-4 space-y-2">
-              <p className="text-sm md:text-base font-bold leading-relaxed">
-                By Day 14, you’ll launch your own AI-powered project — website, voice agent, and a monetizable automation stack.
-              </p>
-              <p className="text-sm font-bold uppercase tracking-wide text-yellow-300">No coding required. Curiosity mandatory.</p>
-            </div>
-            <div className="bg-gray-100 border-4 border-black rounded-xl shadow-[6px_6px_0_0_#000] p-4">
-              <p className="text-sm md:text-base font-bold text-black leading-relaxed">
-                💰 100% Money-Back Guarantee — build and deploy your own website by the end, or get a full refund. No questions
-                asked.
-              </p>
-            </div>
-            <Link
-              href="https://nexify.club/dp/691031a558cce7577942316f"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                className="px-6 py-3 text-base md:text-lg font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] transition-all rounded-lg"
-                style={{ backgroundColor: "#1D4ED8", color: "white" }}
-              >
-                🎟 Join the AI SuperStack Today — Learn. Build. Earn.
-              </button>
-            </Link>
           </div>
         </div>
 
