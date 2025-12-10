@@ -1,7 +1,7 @@
 ﻿# VybeSchool – Main Site
 
 A modern marketing and content site for VybeSchool built with Next.js App Router, React 19, and Tailwind CSS. This document gives new developers everything needed to set up, understand, and contribute to the codebase.
-
+jus checking
 ## Tech Stack
 - Framework: Next.js 15 (App Router)
 - Runtime: Node.js 18+
