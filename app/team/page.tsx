@@ -76,7 +76,7 @@ export default function TeamPage() {
                 <img src="/Maneesh.jpg" alt="Bommakanti Maneesh" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-bold text-lg mb-2 text-left">BOMMAKANTI MANEESH</h3>
-              <p className="text-blue-600 font-semibold mb-2 text-left">AI&DS Graduate</p>
+              <p className="text-blue-600 font-semibold mb-2 text-left">AI Engineer</p>
               <p className="text-sm text-gray-600 mb-4 leading-relaxed text-left">AI Creator, No-code/Low-code Developer, R&D AI Specialist, and AI Superstack Mentor.</p>
               <div className="flex justify-center gap-2">
                 <a
