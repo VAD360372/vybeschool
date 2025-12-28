@@ -302,7 +302,7 @@ export default function WebinarsPage() {
               PROGRAM 2: WHAT YOU WANT TO LEARN
             </h2>
             <p className="mt-4 text-base md:text-lg font-bold text-black max-w-3xl mx-auto">
-              Explore AI tools tailored to your needs — master the tools that matter to you
+              Learn anything anytime anywhere at your own pace with our live classes!
             </p>
           </div>
 
@@ -326,10 +326,10 @@ export default function WebinarsPage() {
             ))}
             {/* More Option */}
             <div
-              className="border-4 border-black rounded-xl shadow-[6px_6px_0_0_#000] p-6 flex items-center justify-center hover:shadow-[8px_8px_0_0_#000] hover:-translate-y-1 transition-all"
+              className="border-4 border-black rounded-xl shadow-[6px_6px_0_0_#000] p-4 flex items-center justify-center hover:shadow-[8px_8px_0_0_#000] hover:-translate-y-1 transition-all"
               style={{ backgroundColor: "#FFD700" }}
             >
-              <h3 className="text-2xl md:text-3xl font-black text-black">+ MORE</h3>
+              <h3 className="text-lg md:text-xl font-black text-black">+ MORE</h3>
             </div>
           </div>
 
@@ -344,7 +344,7 @@ export default function WebinarsPage() {
                 className="px-8 py-4 text-lg md:text-xl font-black border-4 border-black shadow-[8px_8px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] transition-all rounded-lg"
                 style={{ backgroundColor: "#25D366", color: "#fff" }}
               >
-                📱 Connect With Us on WhatsApp
+                Connect With Us on WhatsApp
               </button>
             </Link>
             <p className="mt-4 text-sm md:text-base font-bold text-black">
