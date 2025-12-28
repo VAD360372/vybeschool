@@ -154,7 +154,7 @@ export default function WebinarsPage() {
             </h2>
             <p className="text-sm md:text-base font-semibold text-black leading-relaxed">
               Every session is hands-on 
-              you’ll explore, build, and launch projects that make AI work for you.
+              you'll explore, build, and launch projects that make AI work for you.
             </p>
           </div>
         </div>
