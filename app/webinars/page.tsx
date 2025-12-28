@@ -108,47 +108,47 @@ const aiTools = [
   {
     name: "Lovable",
     description: "Build production-ready web apps with AI-powered design to code conversion",
-    icon: "🎨",
+    logo: "/teachinglogos/lovable.png",
   },
   {
     name: "GitHub Copilot",
     description: "AI pair programmer that helps you write code faster with intelligent suggestions",
-    icon: "💻",
+    logo: "/teachinglogos/coploit.png",
   },
   {
     name: "Claude Code",
     description: "AI-first code editor that understands your codebase and assists with development",
-    icon: "⚡",
+    logo: "/teachinglogos/claudecode.png",
   },
   {
     name: "ChatGPT",
     description: "Conversational AI assistant for problem-solving and creative tasks",
-    icon: "💬",
+    logo: "/teachinglogos/chatgpt.png",
   },
   {
     name: "Claude",
     description: "Advanced AI assistant specialized in analysis, writing, and coding tasks",
-    icon: "🧠",
+    logo: "/teachinglogos/claude.png",
   },
   {
     name: "V0",
     description: "Transform designs into React components with Tailwind CSS instantly",
-    icon: "🚀",
+    logo: "/teachinglogos/v0.png",
   },
   {
     name: "Perplexity",
     description: "AI-powered search engine that provides accurate answers with citations",
-    icon: "🔍",
+    logo: "/teachinglogos/perplexity.png",
   },
   {
     name: "Cursor AI",
     description: "Intelligent code completion and refactoring for modern development workflows",
-    icon: "🎯",
+    logo: "/teachinglogos/cursor.png",
   },
   {
     name: "n8n",
     description: "Workflow automation tool to connect apps and build custom AI automations",
-    icon: "🔗",
+    logo: "/teachinglogos/n8n.png",
   },
 ]
 
@@ -314,7 +314,9 @@ export default function WebinarsPage() {
                 className="border-4 border-black rounded-xl shadow-[6px_6px_0_0_#000] bg-white p-6 space-y-3 hover:shadow-[8px_8px_0_0_#000] hover:-translate-y-1 transition-all"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-4xl">{tool.icon}</span>
+                  <div className="relative w-12 h-12 flex-shrink-0">
+                    <Image src={tool.logo} alt={tool.name} fill className="object-contain" />
+                  </div>
                   <h3 className="text-xl md:text-2xl font-black text-black">{tool.name}</h3>
                 </div>
                 <p className="text-sm md:text-base font-semibold text-black leading-relaxed">
