@@ -59,7 +59,7 @@ export default function GlobalNavigation() {
               AI SUPPORT
             </Link>
             <Link href="/webinars" className="hover:underline cursor-pointer">
-              WEBINARS
+              1:1
             </Link>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function GlobalNavigation() {
               className="text-2xl font-black text-black hover:underline py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              WEBINARS
+              1:1
             </Link>
           </div>
         </div>

@@ -104,6 +104,54 @@ const programPhases = [
   },
 ]
 
+const aiTools = [
+  {
+    name: "Lovable",
+    description: "Build production-ready web apps with AI-powered design to code conversion",
+    icon: "🎨",
+  },
+  {
+    name: "GitHub Copilot",
+    description: "AI pair programmer that helps you write code faster with intelligent suggestions",
+    icon: "💻",
+  },
+  {
+    name: "Claude Code",
+    description: "AI-first code editor that understands your codebase and assists with development",
+    icon: "⚡",
+  },
+  {
+    name: "ChatGPT",
+    description: "Conversational AI assistant for problem-solving and creative tasks",
+    icon: "💬",
+  },
+  {
+    name: "Claude",
+    description: "Advanced AI assistant specialized in analysis, writing, and coding tasks",
+    icon: "🧠",
+  },
+  {
+    name: "V0",
+    description: "Transform designs into React components with Tailwind CSS instantly",
+    icon: "🚀",
+  },
+  {
+    name: "Perplexity",
+    description: "AI-powered search engine that provides accurate answers with citations",
+    icon: "🔍",
+  },
+  {
+    name: "Cursor AI",
+    description: "Intelligent code completion and refactoring for modern development workflows",
+    icon: "🎯",
+  },
+  {
+    name: "n8n",
+    description: "Workflow automation tool to connect apps and build custom AI automations",
+    icon: "🔗",
+  },
+]
+
 export default function WebinarsPage() {
   const phaseRefs = useRef<(HTMLDivElement | null)[]>([])
 
@@ -134,10 +182,10 @@ export default function WebinarsPage() {
             className="text-3xl md:text-5xl font-black px-6 py-3 border-4 border-black shadow-[6px_6px_0_0_#000] inline-block"
             style={{ backgroundColor: "#FFD700", color: "#000" }}
           >
-            WEBINARS
+            1:1 PROGRAMS
           </h1>
           <p className="mt-6 text-base md:text-lg font-bold text-black max-w-3xl mx-auto leading-relaxed">
-            Master AI from scratch in Telugu
+            Personalized AI learning tailored to your goals — choose what fits you best
           </p>
         </div>
 
@@ -159,10 +207,24 @@ export default function WebinarsPage() {
           </div>
         </div>
 
-        {/* Timeline Animation */}
-        <section className="relative mb-20">
-          <div className="hidden lg:block absolute left-4 top-0 bottom-0 border-l-4 border-black"></div>
-          <div className="space-y-10">
+        {/* SECTION 1: What We Teach */}
+        <div className="mb-20">
+          <div className="text-center mb-10">
+            <h2
+              className="text-2xl md:text-4xl font-black px-6 py-3 border-4 border-black shadow-[6px_6px_0_0_#000] inline-block"
+              style={{ backgroundColor: "#4285F4", color: "#fff" }}
+            >
+              PROGRAM 1: WHAT WE TEACH
+            </h2>
+            <p className="mt-4 text-base md:text-lg font-bold text-black max-w-3xl mx-auto">
+              Structured 14-day curriculum delivered in Telugu — from AI foundations to monetization
+            </p>
+          </div>
+
+          {/* Timeline Animation */}
+          <section className="relative">
+            <div className="hidden lg:block absolute left-4 top-0 bottom-0 border-l-4 border-black"></div>
+            <div className="space-y-10">
             {programPhases.map((phase, index) => (
               <div
                 key={phase.id}
@@ -228,6 +290,66 @@ export default function WebinarsPage() {
             </Link>
           </div>
         </section>
+        </div>
+
+        {/* SECTION 2: What You Want to Learn */}
+        <div className="mb-20">
+          <div className="text-center mb-10">
+            <h2
+              className="text-2xl md:text-4xl font-black px-6 py-3 border-4 border-black shadow-[6px_6px_0_0_#000] inline-block"
+              style={{ backgroundColor: "#22C55E", color: "#fff" }}
+            >
+              PROGRAM 2: WHAT YOU WANT TO LEARN
+            </h2>
+            <p className="mt-4 text-base md:text-lg font-bold text-black max-w-3xl mx-auto">
+              Explore AI tools tailored to your needs — master the tools that matter to you
+            </p>
+          </div>
+
+          {/* AI Tools Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {aiTools.map((tool, index) => (
+              <div
+                key={index}
+                className="border-4 border-black rounded-xl shadow-[6px_6px_0_0_#000] bg-white p-6 space-y-3 hover:shadow-[8px_8px_0_0_#000] hover:-translate-y-1 transition-all"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="text-4xl">{tool.icon}</span>
+                  <h3 className="text-xl md:text-2xl font-black text-black">{tool.name}</h3>
+                </div>
+                <p className="text-sm md:text-base font-semibold text-black leading-relaxed">
+                  {tool.description}
+                </p>
+              </div>
+            ))}
+            {/* More Option */}
+            <div
+              className="border-4 border-black rounded-xl shadow-[6px_6px_0_0_#000] p-6 flex items-center justify-center hover:shadow-[8px_8px_0_0_#000] hover:-translate-y-1 transition-all"
+              style={{ backgroundColor: "#FFD700" }}
+            >
+              <h3 className="text-2xl md:text-3xl font-black text-black">+ MORE</h3>
+            </div>
+          </div>
+
+          {/* Connect With Us Button */}
+          <div className="text-center">
+            <Link
+              href="https://wa.me/918074226633"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                className="px-8 py-4 text-lg md:text-xl font-black border-4 border-black shadow-[8px_8px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] transition-all rounded-lg"
+                style={{ backgroundColor: "#25D366", color: "#fff" }}
+              >
+                📱 Connect With Us on WhatsApp
+              </button>
+            </Link>
+            <p className="mt-4 text-sm md:text-base font-bold text-black">
+              Let's discuss your learning goals and customize a 1:1 program for you!
+            </p>
+          </div>
+        </div>
       </div>
 
       <style jsx global>{`
