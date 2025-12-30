@@ -1,12 +1,11 @@
-"use client"
+import { Hero1to1 } from "../1to1-programs/components/Hero1to1"
+import { ThreeStepFlow } from "../1to1-programs/components/ThreeStepFlow"
+import { TrackOneSuperStack } from "../1to1-programs/components/TrackOneSuperStack"
+import { TrackTwoTools } from "../1to1-programs/components/TrackTwoTools"
+import { WhatsAppCTA } from "../1to1-programs/components/WhatsAppCTA"
 
-import { Hero1to1 } from "./components/Hero1to1"
-import { ThreeStepFlow } from "./components/ThreeStepFlow"
-import { TrackOneSuperStack } from "./components/TrackOneSuperStack"
-import { TrackTwoTools } from "./components/TrackTwoTools"
-import { WhatsAppCTA } from "./components/WhatsAppCTA"
 
-export default function OneToOneProgramsPage() {
+export default function WebinarsPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
       {/* Hero Section */}
@@ -43,7 +42,8 @@ export default function OneToOneProgramsPage() {
           <WhatsAppCTA />
         </div>
       </section>
+
+      {/* Webinar-specific Footer removed as requested */}
     </main>
   )
 }
-

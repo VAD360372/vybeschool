@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 
-const skillTags = ["ChatGPT", "AI Tools", "Automation", "Video Editing", "Freelancing"]
-const timeOptions = ["30 min/day", "1 hr/day", "Weekend Mode"]
+const skillTags = ["ChatGPT", "AI Tools", "Automation", "Video Editing", "Freelancing", "Custom"]
+const timeOptions = ["30 min", "1 hr", "Weekend Mode"]
 
 export function ThreeStepFlow() {
   const [isVisible, setIsVisible] = useState(false)
@@ -44,8 +44,8 @@ export function ThreeStepFlow() {
           <div className="border-4 border-black shadow-[8px_8px_0_0_#000] rounded-2xl bg-gradient-to-br from-white to-blue-50 p-6 md:p-8 h-full hover:shadow-[12px_12px_0_0_#000] hover:-translate-y-2 transition-all hover:rotate-1 group">
             <div className="space-y-4">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center font-black text-xl shadow-lg group-hover:scale-110 transition-transform">
-                  1
+                <div className="w-12 h-12 rounded-full flex items-center justify-center font-black text-xl">
+                  <span className="text-black">1</span>
                 </div>
                 <h3 className="text-xl md:text-2xl font-black text-black leading-tight">
                   Select What You Want to Learn
@@ -81,8 +81,8 @@ export function ThreeStepFlow() {
           <div className="border-4 border-black shadow-[8px_8px_0_0_#000] rounded-2xl bg-gradient-to-br from-white to-green-50 p-6 md:p-8 h-full hover:shadow-[12px_12px_0_0_#000] hover:-translate-y-2 transition-all hover:rotate-1 group">
             <div className="space-y-4">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-green-600 text-white flex items-center justify-center font-black text-xl shadow-lg group-hover:scale-110 transition-transform">
-                  2
+                <div className="w-12 h-12 rounded-full flex items-center justify-center font-black text-xl">
+                  <span className="text-black">2</span>
                 </div>
                 <h3 className="text-xl md:text-2xl font-black text-black leading-tight">
                   Select How Many Hours You Want to Spend
@@ -118,8 +118,8 @@ export function ThreeStepFlow() {
           <div className="border-4 border-black shadow-[8px_8px_0_0_#000] rounded-2xl bg-gradient-to-br from-white to-purple-50 p-6 md:p-8 h-full hover:shadow-[12px_12px_0_0_#000] hover:-translate-y-2 transition-all hover:rotate-1 relative overflow-hidden group">
             <div className="space-y-4">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center font-black text-xl shadow-lg group-hover:scale-110 transition-transform">
-                  3
+                <div className="w-12 h-12 rounded-full flex items-center justify-center font-black text-xl">
+                  <span className="text-black">3</span>
                 </div>
                 <h3 className="text-xl md:text-2xl font-black text-black leading-tight">
                   Join the Live Meet & Learn
@@ -176,10 +176,10 @@ export function ThreeStepFlow() {
           href="https://wa.me/916301962520"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-10 py-5 text-lg md:text-xl font-black border-4 border-black shadow-[8px_8px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:-translate-y-1 transition-all rounded-lg animate-pulse hover:animate-none"
+          className="inline-block px-10 py-5 text-lg md:text-xl font-black border-4 border-black shadow-[8px_8px_0_0_#000] hover:shadow-[4px_4px_0_0_#000] hover:-translate-y-1 transition-all rounded-lg"
           style={{ backgroundColor: "#FFD700", color: "#000" }}
         >
-          Start Learning Your Way
+          Start Learning Your Own Way
         </Link>
       </div>
     </div>

@@ -5,51 +5,61 @@ import Link from "next/link"
 const tools = [
   {
     name: "Lovable",
+    logo: "/teachinglogos/lovable.png",
     description: "Build production-ready web apps with AI assistance.",
     tags: ["Dev", "Web"],
   },
   {
     name: "GitHub Copilot",
+    logo: "/teachinglogos/coploit.png",
     description: "AI pair programmer that helps you code faster.",
     tags: ["Dev", "Coding"],
   },
   {
     name: "Claude Code",
+    logo: "/teachinglogos/claudecode.png",
     description: "Advanced coding assistant for complex projects.",
     tags: ["Dev", "Coding"],
   },
   {
     name: "ChatGPT",
+    logo: "/teachinglogos/chatgpt.png",
     description: "Master prompt engineering and AI conversations.",
     tags: ["AI", "Research"],
   },
   {
     name: "Claude",
+    logo: "/teachinglogos/claude.png",
     description: "Deep AI reasoning and analysis capabilities.",
     tags: ["AI", "Research"],
   },
   {
     name: "V0",
+    logo: "/teachinglogos/v0.png",
     description: "Generate beautiful UI components instantly.",
     tags: ["Dev", "Design"],
   },
   {
     name: "Perplexity",
+    logo: "/teachinglogos/perplexity.png",
     description: "AI-powered research and information discovery.",
     tags: ["Research", "AI"],
   },
   {
     name: "Cursor AI",
+    logo: "/teachinglogos/cursor.png",
     description: "Intelligent code editor with AI assistance.",
     tags: ["Dev", "Coding"],
   },
   {
     name: "n8n",
+    logo: "/teachinglogos/n8n.png",
     description: "Build powerful automations without coding.",
     tags: ["Automation", "Dev"],
   },
   {
     name: "+ More",
+    logo: undefined,
     description: "Explore additional tools based on your needs.",
     tags: ["Custom"],
   },
@@ -78,7 +88,15 @@ export function TrackTwoTools() {
             key={idx}
             className="border-4 border-black shadow-[6px_6px_0_0_#000] rounded-xl bg-white p-5 md:p-6 hover:shadow-[10px_10px_0_0_#000] hover:-translate-y-2 transition-all group"
           >
-            <h3 className="text-xl md:text-2xl font-black text-black mb-3 leading-tight group-hover:text-blue-600 transition-colors">
+            <h3 className="text-xl md:text-2xl font-black text-black mb-3 leading-tight group-hover:text-blue-600 transition-colors flex items-center gap-2">
+              {tool.logo && (
+                <img
+                  src={tool.logo}
+                  alt={tool.name + " logo"}
+                  className="w-8 h-8 object-contain rounded bg-white border border-gray-200 mr-2"
+                  style={{ boxShadow: "2px 2px 0 0 #000" }}
+                />
+              )}
               {tool.name}
             </h3>
             <p className="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
@@ -111,7 +129,7 @@ export function TrackTwoTools() {
             className="px-8 py-4 text-base md:text-lg font-black border-4 border-white shadow-[6px_6px_0_0_rgba(255,255,255,1)] hover:shadow-[3px_3px_0_0_rgba(255,255,255,1)] hover:-translate-y-1 transition-all rounded-lg text-center whitespace-nowrap"
             style={{ backgroundColor: "#25D366", color: "#000" }}
           >
-            Connect With Us on WhatsApp
+            Connect
           </Link>
         </div>
       </div>

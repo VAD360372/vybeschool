@@ -131,13 +131,13 @@ export function TrackOneSuperStack() {
 
           <div className="pt-4">
             <Link
-              href="https://nexify.club/dp/691031a558cce7577942316f"
+              href="https://wa.me/916301962520"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-8 py-4 text-base md:text-lg font-black border-4 border-black shadow-[6px_6px_0_0_#000] hover:shadow-[3px_3px_0_0_#000] hover:-translate-y-1 transition-all rounded-lg"
               style={{ backgroundColor: "#FFD700", color: "#000" }}
             >
-              Join the 14-Day Program →
+              Join the 14-Day Program
             </Link>
           </div>
         </div>
