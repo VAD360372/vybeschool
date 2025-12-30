@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 
-const skillTags = ["ChatGPT", "AI Tools", "Automation", "Video Editing", "Freelancing", "Custom"]
+const skillTags = ["ChatGPT", "Langchain", "AI Agents", "n8n", "Video Editing", "Vibe Coding", "Custom"]
 const timeOptions = ["30 min", "1 hr", "Weekend Mode"]
 
 export function ThreeStepFlow() {
