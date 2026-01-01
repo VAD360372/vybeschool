@@ -61,6 +61,9 @@ export default function GlobalNavigation() {
             <Link href="/webinars" className="hover:underline cursor-pointer">
               1:1
             </Link>
+            <Link href="/vybeclub" className="hover:underline cursor-pointer">
+              VYBECLUB
+            </Link>
           </div>
         </div>
 
@@ -126,6 +129,13 @@ export default function GlobalNavigation() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               1:1
+            </Link>
+            <Link
+              href="/vybeclub"
+              className="text-2xl font-black text-black hover:underline py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              VYBECLUB
             </Link>
           </div>
         </div>
